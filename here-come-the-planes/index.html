@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+      tags that don't count in the 35
+      >head, title, style, body
+      >h1, p, and css attributes all are valid
+      > 22 tags
+    -->
+    <title>Here Come The Planes</title>
+    <style>
+    /* CSS goes here */
+    body {
+      background-image: url(https://projecticarus2015.files.wordpress.com/2015/10/hands.jpg?w=900);
+      background-size:cover;
+      color: pink;
+      font-family: "Courier", serif;
+      text-shadow: 1px 1px 10px black;
+      text-align: center;
+      font-size: 30px;
+    }
+    .handButton2 {
+      color:pink;
+      text-shadow: 5px 5px 5px black;
+      font-size: 1em;
+      background-color: black;
+    }
+    .handButton {
+      background-color: pink;
+      border-style: dashed;
+      border-width: thick;
+      border-color: white;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: inherit;
+      display: inline-block;
+      font-size: 32px;
+    }
+    .handButton:hover {
+      background-color: white;
+      animation-name: buttonanimation;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: bezier;
+      color:white;
+      border-style: dashed;
+      border-width: thick;
+      border-color: black;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: inherit;
+      display: inline-block;
+      font-size: 32px;
+    }
+    .handButton2:hover {
+      color:blue;
+      font-size:1em;
+    }
+    h1:hover {
+      font-size:2.5em;
+      animation-name: h1animation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    h2:hover {
+      color:orange;
+      font-size:2em;
+      animation-name: h2animation;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    h3:hover {
+      color:yellow;
+      font-size:2em;
+      animation-name: h3animation;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+    }
+    @-webkit-keyframes h1animation {
+      0%   {color: red;}
+      25%  {color: yellow;}
+      50%  {color: blue;}
+      75% {color: green;}
+      100% {color: red;}
+    }
+    @-webkit-keyframes buttonanimation {
+      0%   {transform: translateY(0em);}
+      33%  {transform: translateY(-5em);}
+      67%  {transform: translateY(5em);}
+      100% {transform: translateY(0em);}
+    }
+    @-webkit-keyframes h2animation {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+    @-webkit-keyframes h3animation {
+      from,to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+      33% {
+        transform: rotateY(180deg);
+      }
+      66% {
+        transform: rotateX(-180deg);
+      }
+    }
+
+  /* CSS STOPS here */
+    </style>
+  </head>
+<!-- HTML goes here! -->
+  <body>
+    <br><br><br><br>
+    <h1><u>This is the </u><div class = "handButton"><a href="https://www.google.com/search?q=hand&safe=active&sxsrf=ACYBGNQhKrSsttYPwkcPRDwqbMpLMhrayQ:1580747083784&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi1k6Lj5bXnAhXlhXIEHbMRAEEQ_AUoAXoECA4QAw&biw=1440&bih=765" class="button">hand</a></div></h1>
+    <h2><strong>The hand that takes,</strong></h2>
+    <h3><i>This is the </i><a href="https://ql1019.github.io/web-nyu-idm/here-come-the-planes" class = "handButton2">hand</a></h3>
+
+  </body>
+</html>
+<!-- HTML STOPS here! -->
