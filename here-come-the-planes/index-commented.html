@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<!-- The head tag specifies the head of the document. Inside the head, information is stored that isn't as visible to the user -->
+
+<head>
+  <!-- The title is the name of the site that appears on the tab -->
+  <title>Here Come The Planes</title>
+  <!-- The style tag enables css code to be written inside an html tag so css and html can live on a single file -->
+  <style>
+    /* CSS goes here */
+    /* The body tag is styled here using css. Multiple effects are applied to alter the appearance of body code */
+    body {
+      /* The background image is referenced from another webpage, and is included here as a static background image */
+      background-image: url(https://projecticarus2015.files.wordpress.com/2015/10/hands.jpg?w=900);
+      /* Changing the background-size property to "cover" ensures the image is scaled to the window size */
+      background-size: cover;
+      /* The color property assigns a color to text in the body */
+      color: pink;
+      /* The font family specifies the typeface and presence/lack of serifs in said typeface */
+      font-family: "Courier", serif;
+      /* Text shadow is a property that allows text to be layered behind existing text. Its arguments are x displacmenet, y displacement, gaussian blur radius, and color of shadow */
+      text-shadow: 1px 1px 10px black;
+      /* Text align allows the developer to place text in a certain position relative to the window. Here, it is center. */
+      text-align: center;
+      /* Font size specifies the size of the typeface used in the pixels unit */
+      font-size: 30px;
+    }
+
+    /* This css container refers to the second link on the page, linking to the next set of lyrics */
+    .handButton2 {
+      /* Color of typeface as mentioned before */
+      color: pink;
+      /* Text shadow as mentioned before */
+      text-shadow: 5px 5px 5px black;
+      /* Font size as mentioned before but with em units, expressing size relative to the original */
+      font-size: 1em;
+      /* Background color sets the color of the box on which the handbutton2 sits */
+      background-color: black;
+    }
+
+    /* This css contianer refers to the first button on the page, linking to a google image search of hands */
+    .handButton {
+      /* Background color sets the color of the box on which the handbutton sits */
+      background-color: pink;
+      /* Border style is a property that lets developers specify the visual qualities of a border. Here, it's a dashed line */
+      border-style: dashed;
+      /* Border width is a property that determines the thickness of the line that goes around a tag */
+      border-width: thick;
+      /* Border color is a property that determines the color of the border */
+      border-color: white;
+      /* Color is a property that determines typeface color */
+      color: black;
+      /* Padding is a property that determines the buffer space allocated around a tag/container/div */
+      padding: 15px 32px;
+      /* Text align is a property that aligns the text to left, right, or center */
+      text-align: center;
+      /* Display is a property that determines whether a tag/container/div falls inline with existing tags, takes up its own space, or is fixed in place */
+      display: inline-block;
+      /* Font size is a property that modifies the scale of the font */
+      font-size: 32px;
+    }
+    /* This css container refers to the first button on the site, entitled "hand" */
+    .handButton:hover {
+      /* Backround color is a property that determines the color of the area surrounding a div/tag/countainer */
+      background-color: white;
+      /* Animation name is a property that applies a custom animation to a div/tag/container. In this case, it is applying the buttonanimation */
+      animation-name: buttonanimation;
+      /* Animation duration is a property that determines the time an animation is played for (distance between keyframes is mapped accordingly) */
+      animation-duration: 5s;
+      /* Animation iteration count allows the developer to spcecify how an animation continues after it has finished a cycle */
+      animation-iteration-count: infinite;
+      /* Animation timing function is a property that determines the interpolation between keyframes (how smoothly does the animation transfer from one state to the next) */
+      animation-timing-function: bezier;
+      /* Border style that lets developers specify the visual qualities of a border. Here, it's a dashed line  */
+      border-style: dashed;
+      /* Border width is a property that determines the thickness of the line that goes around a tag */
+      border-width: thick;
+      /* Border color is a property that determines the color of the border */
+      border-color: black;
+      /* Color determines the text color */
+      color: black;
+      /* Padding is a property that determines the buffer space allocated around a tag/container/div */
+      padding: 15px 32px;
+      /* Text align is a property that aligns the text to left, right, or center */
+      text-align: center;
+      /* Display is a property that determines whether a tag/container/div falls inline with existing tags, takes up its own space, or is fixed in place */
+      display: inline-block;
+      /* Font size as mentioned before but with pixel units */
+      font-size: 32px;
+    }
+    /* This css container refers to the second link on the site, entitled "hand" with the hover selector specified */
+    .handButton2:hover {
+      /* Color determines the text color */
+      color: blue;
+      /* Font size as mentioned before but with em units */
+      font-size: 1em;
+    }
+    /* This tag refers to all header html tags and has the hover selector specified so that effects are applied when a user mouses over */
+    h1:hover {
+      /* Font size as mentioned before but with em units */
+      font-size: 2.5em;
+      /* Animation name is a property that applies a custom animation to a div/tag/container. */
+      animation-name: h1animation;
+      /* Animation duration is a property that determines the time an animation is played for (distance between keyframes is mapped accordingly) */
+      animation-duration: 2s;
+      /* Animation iteration count allows the developer to spcecify how an animation continues after it has finished a cycle */
+      animation-iteration-count: infinite;
+      /* Animation timing function is a property that determines the interpolation between keyframes (how smoothly does the animation transfer from one state to the next) */
+      animation-timing-function: linear;
+    }
+
+    h2:hover {
+      color: orange;
+      font-size: 2em;
+      animation-name: h2animation;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    h3:hover {
+      color: yellow;
+      font-size: 2em;
+      animation-name: h3animation;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+    }
+    /* @-webkit-keyframes is a css rule that allows for the specification of keyframes, interpolated to form an animation */
+    @-webkit-keyframes h1animation {
+      /* Keyframe at 0% animation progress */
+      0% {
+        /* Text color speicifed */
+        color: red;
+      }
+      /* Keyframe at 25% animation progress, etc. */
+      25% {
+        color: yellow;
+      }
+
+      50% {
+        color: blue;
+      }
+
+      75% {
+        color: green;
+      }
+
+      100% {
+        color: red;
+      }
+    }
+    /* @-webkit-keyframes is a css rule that allows for the specification of keyframes, interpolated to form an animation */
+    /* This animation bounces up and down somewhat sinusoidally */
+    @-webkit-keyframes buttonanimation {
+      0% {
+        /* The transform property allows html elements to be modified in their position, scale, and rotation */
+        /* Transformed to home position */
+        transform: translateY(0em);
+      }
+
+      33% {
+        /* Move down by 5 proportional increments */
+        transform: translateY(-5em);
+      }
+
+      67% {
+        /* Move up 5 increments */
+        transform: translateY(5em);
+      }
+
+      100% {
+        /* Return to home position */
+        transform: translateY(0em);
+      }
+    }
+    /* @-webkit-keyframes is a css rule that allows for the specification of keyframes, interpolated to form an animation */
+    /* This animation rotates text in a linear fashion */
+    @-webkit-keyframes h2animation {
+      from {
+        /* The transform property allows html elements to be modified in their position, scale, and rotation */
+        /* Transformed to home position */
+        transform: rotate(0deg);
+      }
+
+      to {
+        /* The transform property allows html elements to be modified in their position, scale, and rotation */
+        /* Spins clockwise 360 to home */
+        transform: rotate(360deg);
+      }
+    }
+    /* @-webkit-keyframes is a css rule that allows for the specification of keyframes, interpolated to form an animation */
+    /* This animation rotates text in 3 axes periodically */
+    @-webkit-keyframes h3animation {
+
+      from,
+      to {
+        /* The transform property allows html elements to be modified in their position, scale, and rotation */
+        /* Home position */
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+      33% {
+        /* Rotate 180 degrees on Y axis */
+        transform: rotateY(180deg);
+      }
+      66% {
+        /* Rotate -180 degrees on X axis */
+        transform: rotateX(-180deg);
+      }
+    }
+
+    /* CSS STOPS here */
+  </style>
+</head>
+<!-- HTML goes here! -->
+<!-- The body tag contains the general information that is directly presented to the user on a webpage -->
+<body>
+  <!-- the br tag allows for a fixed increment of spacing between tags -->
+  <br><br><br><br>
+  <!-- h1 is a type of header that has the most visual emphasis. Usually bolded by default. -->
+  <!-- u tag underlines text -->
+  <h1><u>This is the </u>
+    <!-- div is a tag that allows a segment of code to be modified in css as a single unit -->
+    <!-- div has a class name, and an a element to store an active link -->
+    <!-- a tags let the developer store links -->
+    <div class="handButton"><a href="https://www.google.com/search?q=hand&safe=active&sxsrf=ACYBGNQhKrSsttYPwkcPRDwqbMpLMhrayQ:1580747083784&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi1k6Lj5bXnAhXlhXIEHbMRAEEQ_AUoAXoECA4QAw&biw=1440&bih=765"
+        class="button">hand</a></div>
+  </h1>
+  <!-- h2 is a type of header that has slightly less visual emphasis than h1 -->
+  <!-- strong is a tag that emboldens text -->
+  <h2><strong>The hand that takes,</strong></h2>
+  <!-- h3 is a type of header that has slightly less visual emphasis than h2 -->
+  <!-- is is a tag that applies italics -->
+  <!-- a tag is used here to link to the next set of lyrics on someone's github page -->
+  <h3><i>This is the </i><a href="https://ql1019.github.io/web-nyu-idm/here-come-the-planes" class="handButton2">hand</a></h3>
+
+</body>
+
+</html>
+<!-- HTML STOPS here! -->
