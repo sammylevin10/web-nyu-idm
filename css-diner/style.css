@@ -1,4 +1,3 @@
-
 /* This is default helpul CSS to include - dont edit this part unless... you want to */
 html,
 body {
@@ -9,10 +8,11 @@ body {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-/* THE END of default helpful basic CSS to include. EDIT the stuff BELOW this line*/
 
+/* THE END of default helpful basic CSS to include. EDIT the stuff BELOW this line*/
 @font-face {
-  font-family: 'violet';
+  font-family: 'Modak', cursive;
+  /* font-family: 'violet'; */
   src: url('./fonts/VioletSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
