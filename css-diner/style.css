@@ -11,7 +11,7 @@ body {
 
 /* THE END of default helpful basic CSS to include. EDIT the stuff BELOW this line*/
 @font-face {
-  font-family: 'Modak', cursive;
+  font-family: 'Modak';
   /* font-family: 'violet'; */
   src: url('./fonts/VioletSans-Regular.woff') format('woff');
   font-weight: normal;
@@ -20,6 +20,7 @@ body {
 
 body {
   background-color: violet;
+  font-family: 'Modak';
   color: yellow;
   text-align: center;
   font-size: 2em;
