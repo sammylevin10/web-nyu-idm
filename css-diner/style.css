@@ -29,6 +29,11 @@ h3.first-header {
   font-family: "Arial"
 }
 
+/* LEVEL 14: Selecting direct children of an element. The p tag within the "outer-container" id is being selected. */
+#outer-container > p {
+  font-family: "Times New Roman", serif;
+}
+
 body {
   background-color: violet;
   font-family: 'Modak';
