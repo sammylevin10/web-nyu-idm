@@ -39,6 +39,13 @@ p:nth-child(3) {
   color:blue;
 }
 
+/* LEVEL: 23 Selecting elements that are the only ones of their type within the parent element. Here, the green text style has been applied to any p's which are the only ones of their type within a div */
+div p:only-of-type {
+  color:green;
+}
+
+
+
 body {
   background-color: violet;
   font-family: 'Modak';
