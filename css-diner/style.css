@@ -18,6 +18,11 @@ body {
   font-style: normal;
 }
 
+/* LEVEL 3: Selecting elements using their ID. Here, a paragraph is being selected through it's p tag id. */
+#paragraph {
+  font-family: "Times New Roman", serif;
+}
+
 body {
   background-color: violet;
   font-family: 'Modak';
