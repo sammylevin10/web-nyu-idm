@@ -23,6 +23,12 @@ body {
   font-family: "Times New Roman", serif;
 }
 
+/* LEVEL 7: Combining the class selector with the type selector. Here, all h3 types of class "first-header" are being selected */
+h3.first-header {
+  color:orange;
+  font-family: "Arial"
+}
+
 body {
   background-color: violet;
   font-family: 'Modak';
