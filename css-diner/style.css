@@ -34,6 +34,11 @@ h3.first-header {
   font-family: "Times New Roman", serif;
 }
 
+/* LEVEL 18: Selecting an element by its order in another element. The third p tag as a child element within the body was selected. */
+p:nth-child(3) {
+  color:blue;
+}
+
 body {
   background-color: violet;
   font-family: 'Modak';
