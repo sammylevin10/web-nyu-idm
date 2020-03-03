@@ -21,6 +21,11 @@ function go(x) {
 
 function gogo(x) {
   $("#Drawers").css("visibility", "hidden");
+  for(let i = 1; i<11; i++) {
+    if(i!=x) {
+      $("#file"+i).css("visibility", "hidden");
+    }
+  }
   if(x==0) {
     x=parseInt(1+3*Math.random());
     console.log("Random selection: " + x);
@@ -47,11 +52,16 @@ function back() {
     for(let i = 1; i<4; i++) {
       $("#drawer"+i).css("visibility", "visible");
     }
+    for(let i = 1; i<11; i++) {
+      $("#file"+i).css("visibility", "visible");
+    }
   }
   if(level==3) {
     $("#Cabinet").css("visibility", "hidden");
     $("#Drawers").css("visibility", "hidden");
-    $("#Files").css("visibility", "visible");
+    for(let i = 1; i<11; i++) {
+      $("#file"+i).css("visibility", "visible");
+    }
   }
   console.log(level);
 }
