@@ -45,6 +45,16 @@ body {
   stroke-linejoin:round;
 }
 
+.svgButton:hover .handle {
+  fill-opacity:1;
+  transition:0.3s ease-in-out;
+  fill:black;
+  stroke:white;
+  stroke-width:3px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -53,14 +63,18 @@ body {
   color: black;
 }
 
-.drawer{
+.flex-container {
+  display: flex;
+  width:100vw;
+  height:100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabinet{
+  visibility:normal;
   height: 70vh;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   fill-opacity:0;
   stroke:black;
   stroke-width:3px;
@@ -69,11 +83,7 @@ body {
   /* transition: fill 0.3s; */
 }
 
-svg {
-
-}
-
-/* a.svg.drawer {
+/* a.svg.cabinet {
   display: block;
   margin-top:15vh;
   margin-left: auto;

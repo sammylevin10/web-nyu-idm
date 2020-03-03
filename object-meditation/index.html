@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|VT323&display=swap" rel="stylesheet">
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script language="JavaScript" src="main.js"></script>
+  <title>My Sweet Page</title>
+</head>
+
+<body>
+  <div class="marquee">
+    <div class="forward">
+      <div class="random"><a onclick="back()" class="button">&nbsp;? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? ? </a></div>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="backward">
+      <div class="random"><a onclick="back()" class="button">&nbsp;< < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < < </a>
+      </div>
+    </div>
+  </div>
+  <div class="flex-container">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152 304.9" style="enable-background:new 0 0 152 304.9;" xml:space="preserve" height=0 class="cabinet">
+      <a xlink:title="1" class="svgButton" onclick="go(1)">
+        <path d="M75.1,91.9l67.2-38.6l0.1,60.7l-67.2,38.6L75.1,91.9z M119.9,100.3v-7.5l-22.3,12.8v7.5L119.9,100.3" />
+        <polygon points="119.9,92.8 119.9,100.3 97.6,113.1 97.6,105.6 	" / class = "handle">
+      </a>
+      <a xlink:title="2" class="svgButton" onclick="go(2)">
+        <path d="M75.2,160.6l67.2-38.6l0.1,60.7l-67.2,38.6L75.2,160.6z M119.9,169v-7.6l-22.3,12.8v7.6L119.9,169" />
+        <polygon points="119.9,161.5 119.9,169 97.7,181.8 97.7,174.3 	" / class = "handle">
+      </a>
+      <a xlink:title="3" class="svgButton" onclick="go(3)">
+        <path d="M75.2,229.3l67.2-38.6l0.1,60.7L75.3,290L75.2,229.3z M120,237.7v-7.5L97.7,243v7.5L120,237.7" />
+        <polygon points="120,230.2 120,237.7 97.7,250.5 97.7,243 	" / class="handle">
+      </a>
+      <a xlink:title="hello" href="http://google.com">
+
+      </a>
+
+      <polygon points="67.9,87.2 2.2,48.9 83.8,1.9 149.5,40.3 	" />
+      <polygon points="68.1,303 2.4,264.7 2.2,48.9 67.9,87.2 	" />
+      <path d="M149.5,40.3L67.9,87.2L68.1,303l81.7-46.9L149.5,40.3z M75.1,91.9l67.2-38.6l0.1,60.7l-67.2,38.6L75.1,91.9 M75.2,160.6l67.2-38.6l0.1,60.7l-67.2,38.6L75.2,160.6 M75.3,290l-0.1-60.7l67.2-38.6l0.1,60.7L75.3,290" />
+    </svg>
+  </div>
+  <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	 viewBox="0 0 134.8 145.5" style="enable-background:new 0 0 134.8 145.5;" xml:space="preserve">
+  <style type="text/css">
+  	.st0{fill:none;stroke:#231F20;stroke-width:3;stroke-miterlimit:10;}
+  	.st1{fill:#FFFFFF;stroke:#231F20;stroke-width:3;stroke-miterlimit:10;}
+  </style>
+  <g>
+  	<polygon class="st0" points="112.3,85.7 112.3,93.2 90,106 90,98.5 	"/>
+  </g>
+  <g>
+  	<path class="st0" d="M67.5,84.8l67.2-38.6l0.1,60.7l-67.2,38.6L67.5,84.8z M112.3,93.2v-7.5L90,98.5v7.5L112.3,93.2"/>
+  </g>
+  <polyline class="st0" points="67.7,84.8 0.5,46.2 0.4,106.9 67.6,145.5 67.7,84.8 "/>
+  <polygon class="st0" points="67.5,7.6 0.3,46.2 67.5,84.8 134.7,46.2 "/>
+  <polygon class="st0" points="67.5,14 11.5,46.2 67.5,78.3 123.5,46.2 "/>
+  <g>
+  	<g>
+  		<g>
+  			<polygon class="st1" points="67.4,14 11.5,46.2 11.4,38.4 42.3,20.6 44.6,10.8 63.4,0 67.3,6.2 			"/>
+  		</g>
+  	</g>
+  	<g>
+  		<g>
+  			<polygon class="st1" points="81.4,22.1 25.5,54.2 25.4,46.4 56.3,28.7 58.6,18.8 77.4,8 81.3,14.3 			"/>
+  		</g>
+  	</g>
+  	<g>
+  		<polygon class="st1" points="95.4,30.1 39.5,62.2 39.4,54.5 70.3,36.7 72.6,26.9 91.4,16.1 95.3,22.3 		"/>
+  	</g>
+  	<polygon class="st1" points="109.3,30.4 105.4,24.1 86.6,34.9 84.3,44.8 53.4,62.5 53.5,70.3 109.4,38.2 	"/>
+  	<polygon class="st1" points="123.3,38.4 119.5,32.2 100.6,42.9 98.3,52.8 67.4,70.5 67.5,78.3 123.4,46.2 	"/>
+  </g>
+  </svg> -->
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
