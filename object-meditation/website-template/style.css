@@ -8,7 +8,7 @@ body {
   box-sizing: inherit;
 }
 
-a {
+.button {
   /* background: -webkit-linear-gradient(left, white , black, white);
   direction: rtl;
   -webkit-background-clip: text;
@@ -17,7 +17,7 @@ a {
   text-decoration:none;
 }
 
-a:hover {
+.button:hover {
   /* background: -webkit-linear-gradient(left, white , black, white);
   direction: rtl;
   -webkit-background-clip: text;
@@ -27,18 +27,22 @@ a:hover {
   transition:1s;
 }
 
-a.svg {
-  position: relative;
-  display: inline-block;
+.svgButton {
+  fill:white;
+  stroke:black;
+  stroke-width:3px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
-a.svg:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left:0;
+.svgButton:hover {
+  fill-opacity:1;
+  transition:0.5s ease-in-out;
+  fill:black;
+  stroke:black;
+  stroke-width:3px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
 body {
@@ -49,19 +53,24 @@ body {
   color: black;
 }
 
-/* object {
-  display: block;
-  margin-top:15vh;
-  margin-left: auto;
-  margin-right: auto;
-  height:70vh;
-  width:auto;
-} */
-
 .drawer{
-  margin-top:15vh;
-  height:20vh;
-  width:auto;
+  height: 70vh;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  fill-opacity:0;
+  stroke:black;
+  stroke-width:3px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  /* transition: fill 0.3s; */
+}
+
+svg {
+
 }
 
 /* a.svg.drawer {
