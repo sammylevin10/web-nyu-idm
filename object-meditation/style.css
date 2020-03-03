@@ -27,30 +27,20 @@ body {
   transition:1s;
 }
 
-.svgButton {
+.vectorButton>g:hover  {
   fill:white;
   stroke:black;
-  stroke-width:3px;
+  stroke-width:13px;
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
-.svgButton:hover {
-  fill-opacity:1;
-  transition:0.5s ease-in-out;
-  fill:black;
-  stroke:black;
-  stroke-width:3px;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.svgButton:hover .handle {
+.vectorButton>g:hover {
   fill-opacity:1;
   transition:0.3s ease-in-out;
   fill:black;
-  stroke:white;
-  stroke-width:3px;
+  stroke:black;
+  stroke-width:13px;
   stroke-linecap:round;
   stroke-linejoin:round;
 }
@@ -71,16 +61,27 @@ body {
   align-items: center;
 }
 
-.cabinet{
-  visibility:normal;
+.vector{
   height: 70vh;
-  margin: 0;
-  fill-opacity:0;
+  fill-opacity:1;
+  fill:white;
   stroke:black;
-  stroke-width:3px;
+  stroke-width:13px;
   stroke-linecap:round;
   stroke-linejoin:round;
   /* transition: fill 0.3s; */
+}
+
+#Cabinet {
+  visibility:normal;
+}
+
+#Drawers {
+  visibility:normal;
+}
+
+#Files {
+  visibility:normal;
 }
 
 /* a.svg.cabinet {
