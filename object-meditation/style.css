@@ -27,12 +27,15 @@ body {
   transition:1s;
 }
 
-.vectorButton>g:hover  {
+.vector{
+  height: 70vh;
+  fill-opacity:1;
   fill:white;
   stroke:black;
   stroke-width:13px;
   stroke-linecap:round;
   stroke-linejoin:round;
+  /* transition: fill 0.3s; */
 }
 
 .vectorButton>g:hover {
@@ -59,17 +62,6 @@ body {
   height:100vh;
   justify-content: center;
   align-items: center;
-}
-
-.vector{
-  height: 70vh;
-  fill-opacity:1;
-  fill:white;
-  stroke:black;
-  stroke-width:13px;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  /* transition: fill 0.3s; */
 }
 
 #Cabinet {
