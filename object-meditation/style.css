@@ -38,6 +38,10 @@ body {
   /* transition: fill 0.3s; */
 }
 
+.temp {
+  fill:red;
+}
+
 .vectorButton>g:hover {
   fill-opacity:1;
   transition:0.3s ease-in-out;
@@ -46,6 +50,10 @@ body {
   stroke-width:13px;
   stroke-linecap:round;
   stroke-linejoin:round;
+}
+
+#Drawers>g:hover {
+  fill:black;
 }
 
 body {

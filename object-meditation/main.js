@@ -20,7 +20,6 @@ function go(x) {
   if (level != 3) {
     level += 1;
   }
-  drawerClickable(false);
   cabinetVisible(false);
   drawerVisible(true,myDrawer);
   fileVisible(true,myDrawer*10,myDrawer*10+10);
@@ -35,7 +34,6 @@ function gogo(x) {
   }
   drawerVisible(true,0);
   fileVisible(true,myFile,myFile+1);
-  drawerClickable(true);
   console.log(level);
 }
 
@@ -44,13 +42,11 @@ function back() {
     level -= 1;
   }
   if (level == 1) {
-    drawerClickable(true);
     cabinetVisible(true);
     drawerVisible(false,0);
     fileVisible(false,0,0);
   }
   if (level == 2) {
-    drawerClickable(false);
     cabinetVisible(false);
     drawerVisible(true, myDrawer);
     fileVisible(true, myDrawer * 10, myDrawer * 10 + 10);
@@ -61,6 +57,7 @@ function back() {
 // myBool true/false determines show/hide operation
 function cabinetVisible(myBool) {
   $("#Cabinet").css("visibility", showHideOperation(myBool));
+  drawerClickable(myBool);
 }
 
 // myBool true/false determines show/hide operation
@@ -107,10 +104,16 @@ function showHideOperation(myBool) {
 
 function drawerClickable(myBool) {
   if (myBool==true) {
-    $("#Drawers>g:hover").css("fill", "black");
+    // $( "#Drawers" ).replaceWith( "<g id='Drawers' class='vectorButton'>" );
+    // $("#Drawers").attr("class", "vectorButton");
+    $("#Drawers").addClass("vectorButton");
+    // $("#Drawers").removeClass("temp");
   }
   else {
-    $("#Drawers>g:hover").css("fill", "white");
+    // $( "#Drawers" ).replaceWith( "<g id='Drawers' class='vectorButton'>" );
+    // $("#Drawers").attr("class", "temp");
+    // $("#Drawers").addClass("temp");
+    $("#Drawers").removeClass("vectorButton");
   }
 }
 
