@@ -2,6 +2,24 @@ let level = 1;
 let myDrawer = 0;
 let myFile = 0;
 
+draw();
+
+var c = document.getElementById("imageCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle = "blue";
+ctx.fillRect(0, 0, c.width, c.height);
+
+function draw() {
+  var ctx = document.getElementById("imageCanvas").getContext('2d');
+  var img = new Image();
+  ctx.mozImageSmoothingEnabled = false;
+  ctx.imageSmoothingEnabled = false;
+  img.onload = function() {
+    ctx.drawImage(img, 0, 0, c.width,c.height);
+  }
+  img.src = "images/test.jpg";
+}
+
 function random() {
   let mySelection=0;
   if (level == 1) {
@@ -27,6 +45,7 @@ function go(x) {
 }
 
 function gogo(x) {
+  elementClickable("Files", false);
   myFile = x;
   console.log("My File is: " + myFile);
   if (level != 3) {
@@ -50,6 +69,7 @@ function back() {
     cabinetVisible(false);
     drawerVisible(true, myDrawer);
     fileVisible(true, myDrawer * 10, myDrawer * 10 + 10);
+    elementClickable("Files", true);
   }
   console.log("Level: " + level);
 }
@@ -57,7 +77,8 @@ function back() {
 // myBool true/false determines show/hide operation
 function cabinetVisible(myBool) {
   $("#Cabinet").css("visibility", showHideOperation(myBool));
-  drawerClickable(myBool);
+  // $("#Cabinet").fadeTo( "slow" , 0.5);
+  elementClickable("Drawers", myBool);
 }
 
 // myBool true/false determines show/hide operation
@@ -77,8 +98,8 @@ function drawerVisible(myBool, myInt) {
 // myBool true/false determines show/hide operation
 // myMin is an inclusive bottom selector of units upon which the operation is uniquely applied
 // myMax is an exclusive top selector of units upon which the operation is uniquely applied
-// For example, true=show apply 0 would show files 1-30
-// For example, false=hide apply 0 would hide files 1-30
+// For example, true=show apply 0 would show none of the 1-30 folders
+// For example, false=hide apply 0 would hide none of the 1-30 folders
 function fileVisible(myBool, myMin, myMax) {
   for (let i = 10; i < 40; i++) {
     if (i > myMin - 1 && i < myMax) {
@@ -102,18 +123,14 @@ function showHideOperation(myBool) {
   return myOperation;
 }
 
-function drawerClickable(myBool) {
+function elementClickable(myId, myBool) {
   if (myBool==true) {
-    // $( "#Drawers" ).replaceWith( "<g id='Drawers' class='vectorButton'>" );
-    // $("#Drawers").attr("class", "vectorButton");
-    $("#Drawers").addClass("vectorButton");
-    // $("#Drawers").removeClass("temp");
+    $("#"+myId+">g:hover").css("fill", "black");
+    console.log(myId+" are clickable!");
   }
   else {
-    // $( "#Drawers" ).replaceWith( "<g id='Drawers' class='vectorButton'>" );
-    // $("#Drawers").attr("class", "temp");
-    // $("#Drawers").addClass("temp");
-    $("#Drawers").removeClass("vectorButton");
+    $("#"+myId+">g:hover").css("fill", "white");
+    console.log(myId+" are not clickable!");
   }
 }
 

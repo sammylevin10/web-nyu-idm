@@ -27,6 +27,13 @@ body {
   transition:1s;
 }
 
+#imageCanvas {
+  width:100vw;
+  height:100vh;
+  position:fixed;
+  z-index: -1;
+}
+
 .vector{
   height: 70vh;
   fill-opacity:1;
@@ -64,6 +71,7 @@ body {
   color: black;
 }
 
+/* Used flexbox alignment and justification */
 .flex-container {
   display: flex;
   width:100vw;

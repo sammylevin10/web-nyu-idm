@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|VT323&display=swap" rel="stylesheet">
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
-  <script language="JavaScript" src="main.js"></script>
-  <title>My Sweet Page</title>
+  <title>Everything Archive</title>
 </head>
 
 <body>
@@ -26,11 +20,20 @@
       </div>
     </div>
   </div>
+  <canvas id="imageCanvas"></canvas>
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script language="JavaScript" src="main.js"></script>
+
   <div class="flex-container">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     	 viewBox="-7 -7 865.1 1403" style="enable-background:new 0 0 851.1 1389;" xml:space="preserve" class="vector">
-    <g id="Files">
-    	<g class="vectorButton">
+    <g>
+    	<g class="vectorButton" id="Files">
     		<g onclick="gogo(39)" id="file39">
     			<polygon class="st0" points="462.3,637.3 462.4,678 320.5,759.9 320.4,719.2 			"/>
     			<polygon class="st0" points="462.4,678 463.1,917.8 108.4,1122.6 107.7,882.8 			"/>
@@ -72,7 +75,7 @@
     			<polygon class="st0" points="779.6,862.3 780.2,1102.1 425.5,1306.9 424.9,1067.1 			"/>
     		</g>
     	</g>
-    	<g class="vectorButton">
+    	<g class="vectorButton" id="Files">
     		<g onclick="gogo(29)" id="file29">
     			<polygon class="st0" points="461.5,349.6 461.6,390.3 319.7,472.2 319.6,431.5 			"/>
     			<polygon class="st0" points="461.6,390.3 462.3,630.1 107.6,834.9 106.9,595.1 			"/>
@@ -114,7 +117,7 @@
     			<polygon class="st0" points="778.7,574.6 779.4,814.4 424.7,1019.2 424,779.4 			"/>
     		</g>
     	</g>
-    	<g class="vectorButton">
+    	<g class="vectorButton" id="Files">
     		<g onclick="gogo(19)" id="file19">
     			<polygon class="st0" points="460.6,61.9 460.8,102.6 318.9,184.5 318.8,143.8 			"/>
     			<polygon class="st0" points="460.8,102.6 461.4,342.4 106.7,547.2 106.1,307.4 			"/>
