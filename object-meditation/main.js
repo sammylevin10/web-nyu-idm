@@ -1,32 +1,74 @@
-let level = 1;
+let myLevel = 1;
 let myDrawer = 0;
 let myFile = 0;
+let d = new Date("January, 2020 01:00:00:000");
+let millis = d.getMilliseconds();
 
-draw();
+// if (millis%1000==0) {
+//   // loopDraw(myLevel, myDrawer, myFile);
+//   console.log("hello");
+// }
+
+loopDraw(myLevel, myDrawer, myFile);
 
 var c = document.getElementById("imageCanvas");
 var ctx = c.getContext("2d");
+ctx.imageSmoothingEnabled= false;
+ctx.filter = 'saturate(0)';
+console.log(c.width);
+console.log(c.height);
 ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, c.width, c.height);
 
-function draw() {
+function draw(myImage, x, y, w, h) {
   var ctx = document.getElementById("imageCanvas").getContext('2d');
   var img = new Image();
-  ctx.mozImageSmoothingEnabled = false;
-  ctx.imageSmoothingEnabled = false;
+  img.src = "images/"+myImage+".jpg";
+  // ctx.mozImageSmoothingEnabled = false;
+  // ctx.imageSmoothingEnabled = false;
   img.onload = function() {
-    ctx.drawImage(img, 0, 0, c.width,c.height);
+    ctx.drawImage(img, x, y, w, h);
   }
-  img.src = "images/test.jpg";
+}
+
+function loopDraw() {
+  let myImage;
+  let xIncrement;
+  let yIncrement;
+  if (myLevel==1) {
+    xIncrement=200;
+    yIncrement=267;
+    myImage = 10;
+  }
+  else if (myLevel==2) {
+    xIncrement=400;
+    yIncrement=400;
+    myImage = myDrawer*10;
+    console.log(myDrawer);
+  }
+  else {
+    xIncrement=2000;
+    yIncrement=900;
+    myImage = myDrawer+myFile;
+    console.log("The image: " + myDrawer+myFile)
+  }
+  for (let x = 0; x<2000; x+=xIncrement) {
+    for (let y = 100; y<900; y+=yIncrement) {
+      // console.log(x);
+      // console.log(y);
+      draw(myImage, x, y, xIncrement, yIncrement);
+      myImage+=1;
+    }
+  }
 }
 
 function random() {
   let mySelection=0;
-  if (level == 1) {
+  if (myLevel == 1) {
     mySelection = parseInt(1 + 3 * Math.random());
     go(mySelection);
   }
-  else if (level == 2) {
+  else if (myLevel == 2) {
     mySelection = parseInt(myDrawer*10 + 9 * Math.random());
     gogo(mySelection);
   }
@@ -35,43 +77,46 @@ function random() {
 function go(x) {
   myDrawer = x;
   console.log("My Drawer is: " + myDrawer);
-  if (level != 3) {
-    level += 1;
+  if (myLevel != 3) {
+    myLevel += 1;
   }
+  loopDraw();
   cabinetVisible(false);
   drawerVisible(true,myDrawer);
   fileVisible(true,myDrawer*10,myDrawer*10+10);
-  console.log(level);
+  console.log(myLevel);
 }
 
 function gogo(x) {
   elementClickable("Files", false);
   myFile = x;
   console.log("My File is: " + myFile);
-  if (level != 3) {
-    level += 1;
+  if (myLevel != 3) {
+    myLevel += 1;
   }
+  loopDraw();
   drawerVisible(true,0);
   fileVisible(true,myFile,myFile+1);
-  console.log(level);
+  console.log(myLevel);
 }
 
 function back() {
-  if (level != 1) {
-    level -= 1;
+  loopDraw();
+  if (myLevel != 1) {
+    myLevel -= 1;
   }
-  if (level == 1) {
+  if (myLevel == 1) {
     cabinetVisible(true);
     drawerVisible(false,0);
     fileVisible(false,0,0);
   }
-  if (level == 2) {
+  if (myLevel == 2) {
     cabinetVisible(false);
     drawerVisible(true, myDrawer);
     fileVisible(true, myDrawer * 10, myDrawer * 10 + 10);
     elementClickable("Files", true);
   }
-  console.log("Level: " + level);
+  console.log("myLevel: " + myLevel);
 }
 
 // myBool true/false determines show/hide operation
