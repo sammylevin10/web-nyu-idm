@@ -3,3 +3,7 @@
 // watch later: https://www.youtube.com/watch?v=XgSjoHgy3Rk
 
 let namesArray = ['Kevin','McCoy','Emily','Frederic','Alisha','Ashli','Simon','Ty','Fiona','Prismo','Sammy','Caroline','Francesca','Karl','Esther','Irene','Martin','Yanxin','Katrina','Kiana'];
+
+console.log(namesArray[Math.floor(Math.random()*namesArray.length)]);
+
+$('#name').html(namesArray[Math.floor(Math.random()*namesArray.length)]);
