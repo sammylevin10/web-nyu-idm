@@ -15,6 +15,7 @@ var c = document.getElementById("imageCanvas");
 var ctx = c.getContext("2d");
 ctx.imageSmoothingEnabled= false;
 ctx.filter = 'saturate(0)';
+ctx.filter = 'blur(0.5)';
 console.log(c.width);
 console.log(c.height);
 ctx.fillStyle = "blue";
@@ -101,10 +102,10 @@ function gogo(x) {
 }
 
 function back() {
-  loopDraw();
   if (myLevel != 1) {
     myLevel -= 1;
   }
+  loopDraw();
   if (myLevel == 1) {
     cabinetVisible(true);
     drawerVisible(false,0);
