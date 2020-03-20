@@ -1,6 +1,8 @@
 let myLevel = 1;
 let myDrawer = 0;
 let myFile = 0;
+let myBlur = 40;
+let mySaturation = 0;
 let d = new Date("January, 2020 01:00:00:000");
 let millis = d.getMilliseconds();
 
@@ -14,50 +16,56 @@ loopDraw(myLevel, myDrawer, myFile);
 var c = document.getElementById("imageCanvas");
 var ctx = c.getContext("2d");
 ctx.imageSmoothingEnabled= false;
-ctx.filter = 'saturate(0)';
-ctx.filter = 'blur(0.5)';
-console.log(c.width);
-console.log(c.height);
 ctx.fillStyle = "blue";
 ctx.fillRect(0, 0, c.width, c.height);
 
-function draw(myImage, x, y, w, h) {
+function draw(myImage, sx, sy, sw, sh, x, y, w, h) {
   var ctx = document.getElementById("imageCanvas").getContext('2d');
+  ctx.filter = 'saturate('+mySaturation+') blur('+myBlur+'px)';
+  console.log("The blur is: "+myBlur);
   var img = new Image();
   img.src = "images/"+myImage+".jpg";
   // ctx.mozImageSmoothingEnabled = false;
   // ctx.imageSmoothingEnabled = false;
   img.onload = function() {
-    ctx.drawImage(img, x, y, w, h);
+    ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
   }
 }
 
 function loopDraw() {
-  let myImage;
-  let xIncrement;
-  let yIncrement;
+  let myImage, xIncrement, yIncrement, sx, sy, sw, sh;
   if (myLevel==1) {
     xIncrement=200;
     yIncrement=267;
+    sx = 550;
+    sw = 900;
+    sy = 0;
+    sh = 1333;
     myImage = 10;
   }
   else if (myLevel==2) {
     xIncrement=400;
     yIncrement=400;
+    sx = 400;
+    sw = 1200;
+    sy = 0;
+    sh = 1333;
     myImage = myDrawer*10;
-    console.log(myDrawer);
+    // console.log(myDrawer);
   }
   else {
     xIncrement=2000;
     yIncrement=900;
-    myImage = myDrawer+myFile;
-    console.log("The image: " + myDrawer+myFile)
+    sx = 0;
+    sw = 2000;
+    sy = 250;
+    sh = 833;
+    myImage = myFile;
+    console.log("The image selected: " + myImage)
   }
   for (let x = 0; x<2000; x+=xIncrement) {
     for (let y = 100; y<900; y+=yIncrement) {
-      // console.log(x);
-      // console.log(y);
-      draw(myImage, x, y, xIncrement, yIncrement);
+      draw(myImage, sx, sy, sw, sh, x, y, xIncrement, yIncrement);
       myImage+=1;
     }
   }
@@ -77,6 +85,10 @@ function random() {
 
 function go(x) {
   myDrawer = x;
+  if (myBlur>-1) {
+    myBlur-=2;
+    mySaturation+=0.05;
+  }
   console.log("My Drawer is: " + myDrawer);
   if (myLevel != 3) {
     myLevel += 1;
@@ -85,11 +97,15 @@ function go(x) {
   cabinetVisible(false);
   drawerVisible(true,myDrawer);
   fileVisible(true,myDrawer*10,myDrawer*10+10);
-  console.log(myLevel);
+  // console.log(myLevel);
 }
 
 function gogo(x) {
   elementClickable("Files", false);
+  if (myBlur>-1) {
+    myBlur-=2;
+    mySaturation+=0.05;
+  }
   myFile = x;
   console.log("My File is: " + myFile);
   if (myLevel != 3) {
@@ -98,7 +114,7 @@ function gogo(x) {
   loopDraw();
   drawerVisible(true,0);
   fileVisible(true,myFile,myFile+1);
-  console.log(myLevel);
+  // console.log(myLevel);
 }
 
 function back() {
@@ -117,7 +133,7 @@ function back() {
     fileVisible(true, myDrawer * 10, myDrawer * 10 + 10);
     elementClickable("Files", true);
   }
-  console.log("myLevel: " + myLevel);
+  // console.log("myLevel: " + myLevel);
 }
 
 // myBool true/false determines show/hide operation
@@ -150,7 +166,7 @@ function fileVisible(myBool, myMin, myMax) {
   for (let i = 10; i < 40; i++) {
     if (i > myMin - 1 && i < myMax) {
       $("#file"+i).css("visibility", showHideOperation(myBool));
-      console.log(i);
+      // console.log(i);
     } else {
       $("#file"+i).css("visibility", showHideOperation(!myBool));
     }
@@ -172,11 +188,11 @@ function showHideOperation(myBool) {
 function elementClickable(myId, myBool) {
   if (myBool==true) {
     $("#"+myId+">g:hover").css("fill", "black");
-    console.log(myId+" are clickable!");
+    // console.log(myId+" are clickable!");
   }
   else {
     $("#"+myId+">g:hover").css("fill", "white");
-    console.log(myId+" are not clickable!");
+    // console.log(myId+" are not clickable!");
   }
 }
 
