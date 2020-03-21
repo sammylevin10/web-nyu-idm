@@ -1,42 +1,39 @@
-let myLevel = 1;
-let myDrawer = 0;
-let myFile = 0;
-let myBlur = 40;
-let mySaturation = 0;
-let d = new Date("January, 2020 01:00:00:000");
-let millis = d.getMilliseconds();
+let myLevel = 1, myDrawer = 0, myFile = 0, myBlur = 40, mySaturation = 0; fadeTime = 1000;
 
-// if (millis%1000==0) {
-//   // loopDraw(myLevel, myDrawer, myFile);
-//   console.log("hello");
-// }
-
-loopDraw(myLevel, myDrawer, myFile);
-
-var c = document.getElementById("imageCanvas");
-var ctx = c.getContext("2d");
+let c = document.getElementById("imageCanvas");
+let ctx = c.getContext("2d");
 ctx.imageSmoothingEnabled= false;
-ctx.fillStyle = "blue";
+ctx.fillStyle = "gray";
 ctx.fillRect(0, 0, c.width, c.height);
 
+loopDraw();
+
+annyang.start();
+if (annyang) {
+  var commands = {
+    'the': function() {
+      alert('world!');
+    }
+  }
+  annyang.init(commands);
+  annyang.debug();
+}
+
 function draw(myImage, sx, sy, sw, sh, x, y, w, h) {
-  var ctx = document.getElementById("imageCanvas").getContext('2d');
+  let ctx = document.getElementById("imageCanvas").getContext('2d');
   ctx.filter = 'saturate('+mySaturation+') blur('+myBlur+'px)';
-  console.log("The blur is: "+myBlur);
   var img = new Image();
   img.src = "images/"+myImage+".jpg";
-  // ctx.mozImageSmoothingEnabled = false;
-  // ctx.imageSmoothingEnabled = false;
   img.onload = function() {
     ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
   }
 }
 
 function loopDraw() {
-  let myImage, xIncrement, yIncrement, sx, sy, sw, sh;
+  let myImage, tileWidth, tileHeight, sx, sy, sw, sh;
   if (myLevel==1) {
-    xIncrement=200;
-    yIncrement=267;
+    tileWidth=200;
+    tileHeight=267;
     sx = 550;
     sw = 900;
     sy = 0;
@@ -44,8 +41,8 @@ function loopDraw() {
     myImage = 10;
   }
   else if (myLevel==2) {
-    xIncrement=400;
-    yIncrement=400;
+    tileWidth=400;
+    tileHeight=400;
     sx = 400;
     sw = 1200;
     sy = 0;
@@ -54,18 +51,17 @@ function loopDraw() {
     // console.log(myDrawer);
   }
   else {
-    xIncrement=2000;
-    yIncrement=900;
+    tileWidth=2000;
+    tileHeight=900;
     sx = 0;
     sw = 2000;
     sy = 250;
     sh = 833;
     myImage = myFile;
-    console.log("The image selected: " + myImage)
   }
-  for (let x = 0; x<2000; x+=xIncrement) {
-    for (let y = 100; y<900; y+=yIncrement) {
-      draw(myImage, sx, sy, sw, sh, x, y, xIncrement, yIncrement);
+  for (let x = 0; x<2000; x+=tileWidth) {
+    for (let y = 100; y<900; y+=tileHeight) {
+      draw(myImage, sx, sy, sw, sh, x, y, tileWidth, tileHeight);
       myImage+=1;
     }
   }
@@ -85,42 +81,26 @@ function random() {
 
 function go(x) {
   myDrawer = x;
-  if (myBlur>-1) {
-    myBlur-=2;
-    mySaturation+=0.05;
-  }
-  console.log("My Drawer is: " + myDrawer);
-  if (myLevel != 3) {
-    myLevel += 1;
-  }
+  if (myBlur>-1) myBlur-=2, mySaturation+=0.05;
+  if (myLevel != 3) myLevel += 1;
   loopDraw();
   cabinetVisible(false);
   drawerVisible(true,myDrawer);
   fileVisible(true,myDrawer*10,myDrawer*10+10);
-  // console.log(myLevel);
 }
 
 function gogo(x) {
-  elementClickable("Files", false);
-  if (myBlur>-1) {
-    myBlur-=2;
-    mySaturation+=0.05;
-  }
   myFile = x;
-  console.log("My File is: " + myFile);
-  if (myLevel != 3) {
-    myLevel += 1;
-  }
+  if (myBlur>-1) myBlur-=2, mySaturation+=0.05;
+  if (myLevel != 3) myLevel += 1;
   loopDraw();
+  elementClickable("Files", false);
   drawerVisible(true,0);
   fileVisible(true,myFile,myFile+1);
-  // console.log(myLevel);
 }
 
 function back() {
-  if (myLevel != 1) {
-    myLevel -= 1;
-  }
+  if (myLevel != 1) myLevel -= 1;
   loopDraw();
   if (myLevel == 1) {
     cabinetVisible(true);
@@ -133,13 +113,19 @@ function back() {
     fileVisible(true, myDrawer * 10, myDrawer * 10 + 10);
     elementClickable("Files", true);
   }
-  // console.log("myLevel: " + myLevel);
+}
+
+function textboxVisible(myBool) {
+  if (myBool) $(".textbox").fadeIn(fadeTime);
+  else $(".textbox").fadeTo( fadeTime , 0, function() {
+    $(".textbox").css("visibility", "hidden");
+  });
 }
 
 // myBool true/false determines show/hide operation
 function cabinetVisible(myBool) {
-  $("#Cabinet").css("visibility", showHideOperation(myBool));
-  // $("#Cabinet").fadeTo( "slow" , 0.5);
+  if (myBool) $("#Cabinet").fadeIn(fadeTime);
+  else $("#Cabinet").fadeOut(fadeTime);
   elementClickable("Drawers", myBool);
 }
 
@@ -150,9 +136,11 @@ function cabinetVisible(myBool) {
 function drawerVisible(myBool, myInt) {
   for (let i = 1; i < 4; i++) {
     if (i == myInt) {
-      $("#drawer" + i).css("visibility", showHideOperation(myBool));
+      if (myBool) $("#drawer"+i).fadeIn(fadeTime);
+      else $("#drawer"+i).fadeOut(fadeTime);
     } else {
-      $("#drawer" + i).css("visibility", showHideOperation(!myBool));
+      if (myBool) $("#drawer"+i).fadeOut(fadeTime);
+      else $("#drawer"+i).fadeIn(fadeTime);
     }
   }
 }
@@ -165,10 +153,12 @@ function drawerVisible(myBool, myInt) {
 function fileVisible(myBool, myMin, myMax) {
   for (let i = 10; i < 40; i++) {
     if (i > myMin - 1 && i < myMax) {
-      $("#file"+i).css("visibility", showHideOperation(myBool));
+      if (myBool) $("#file"+i).fadeIn(fadeTime);
+      else $("#file"+i).fadeOut(fadeTime);
       // console.log(i);
     } else {
-      $("#file"+i).css("visibility", showHideOperation(!myBool));
+      if (myBool) $("#file"+i).fadeOut(fadeTime);
+      else $("#file"+i).fadeIn(fadeTime);
     }
   }
 }
@@ -194,9 +184,4 @@ function elementClickable(myId, myBool) {
     $("#"+myId+">g:hover").css("fill", "white");
     // console.log(myId+" are not clickable!");
   }
-}
-
-function debug(x) {
-  console.log("Hello");
-  console.log(x);
 }
