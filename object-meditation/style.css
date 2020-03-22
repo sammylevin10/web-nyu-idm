@@ -8,37 +8,27 @@ body {
   box-sizing: inherit;
 }
 
+/* -----COLORS----- */
+/* Colors are defined as CSS variables, which are referenced across the stylesheet and can be toggled using JavaScript */
+
+/* The colorWrap wrapper has three possible rule sets, defined by three different classes */
 #colorWrap.light {
   --color-1: white;
   --color-2: black;
 }
-
 #colorWrap.dark {
   --color-1: black;
   --color-2: white;
 }
-
 #colorWrap.matrix {
   --color-1: black;
   --color-2: lime;
 }
 
-body {
-  font-size: 7vh;
-  font-family: 'IBM Plex Mono' ;
-}
+/* -----CANVAS----- */
+/* The canvas is the background of the page which displays images according to what part of the archive the user is accessing */
 
-.button {
-  color: var(--color-2);
-  text-decoration:none;
-}
-
-.button:hover {
-  color: var(--color-1);
-  text-decoration:none;
-  transition:1s;
-}
-
+/* The HTML canvas is made to fullscreen and is placed behind all other elements */
 #imageCanvas {
   width:100vw;
   height:100vh;
@@ -46,6 +36,10 @@ body {
   z-index: -1;
 }
 
+/* -----VECTORS----- */
+/* There are several vectors on this page including the cabinet and its drawer and file components, as well as the settings bar */
+
+/* Any SVG is styled according to this rule set */
 .vector{
   height: 70vh;
   fill:var(--color-1);
@@ -54,46 +48,66 @@ body {
   stroke-linecap:round;
   stroke-linejoin:round;
 }
-
+/* The one exception is the settings bar SVG set which is styled as a flexbox with 5 flex elements. The flex direction is mobile responsive */
 .vector#settings-bar{
+  /* FLEXBOX FROGGY LEVEL 13: flex-direction, align-items, and justify-content are all used to organize mutiple flex elements */
   display:flex;
-  position:fixed;
-  margin-top:15vh;
-  margin-left:4vh;
-  width: 100px;
-  height:70vh;
   flex-direction:column;
   align-items: flex-start;
   justify-content: space-between;
+  position:fixed;
+  margin-top:15vh;
+  margin-left:4vh;
+  width: 7vw;
+  height:70vh;
   stroke-width:13px;
   stroke:var(--color-2);
 }
-
 .vector#settings-bar>svg{
-  width:100px;
+  width:7vw;
 }
-
+/* If a vector is supposed to be clickable, it will follow this rule set for the hover pseudoclass which specifies a new fill color */
 .vectorButton>g:hover {
   transition:0.3s ease-in-out;
   fill:var(--color-2);
 }
+/* The "cabinet" SVG is positioned on the center of the screen inside its flex-container flexbox */
+.flex-container {
+  /* FLEXBOX FROGGY LEVEL 6: justify-content and align-items are used to center a single flex element in its flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+}
 
+/* -----TEXTBOX----- */
+/* An informational textbox explains the interface to users. Its visibility can be toggled in the settings menu */
+
+/* Default font and size are specified for elements in body */
+body {
+  font-size: 7vh;
+  font-family: 'IBM Plex Mono' ;
+}
+/* h1 and p elements in the textbox are styled according to these rule sets */
 h1 {
   font-size: 3vw;
   text-align: center;
   padding-top:30px;
   margin-bottom:-3vh;
 }
-
 p {
   font-size: 2vw;
   padding:3vw;
   text-align: justify;
   line-height: 5.5vh;
 }
-
+/* The textbox itself is fixed to the center of the screen and its contents are formatted as flex elements */
 .textbox {
-  /* display: flex; */
+  /* FLEXBOX FROGGY LEVEL 11: flex-direction is used to change the direction of elements and justify-content is used to set equal spacing around elements */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
   position: fixed;
   background-color: var(--color-1);
   border-color: var(--color-2);
@@ -104,25 +118,19 @@ p {
   width:70vw;
   margin-left: 15vw;
   height:70vh;
-  justify-content: center;
-  align-items:center;
   transition:1s;
   visibility: visible;
 }
-
+/* The textbox adapts a different style when hovered, as defined by this pseudoclass rule set */
 .textbox:hover {
   background-color:var(--color-2);
   color:var(--color-1);
 }
 
-/* Used flexbox alignment and justification */
-.flex-container {
-  display: flex;
-  height:100vh;
-  justify-content: center;
-  align-items: center;
-}
+/* -----MARQUEE BUTTONS----- */
+/* Two marquee buttons at the top and bottom of the screen are used to navigate the archive */
 
+/* Marquees are styled according to this rule set */
 .marquee {
   position: fixed;
   width: 100vw;
@@ -133,41 +141,158 @@ p {
   border-width: 5px;
   transition:1s;
 }
-
+/* The marquee hover pseudoclass rule set causes the background color to be changed */
 .marquee:hover {
   background-color:var(--color-2);
 }
-
+/* The second marquee is selected as a pseudoclass and fixed to the bottom of the screen */
 .marquee:nth-of-type(2) {
   bottom:0px;
 }
-
+/* The forward-moving marquee is styled according to this rule set with corresponding animation property */
 .forward {
   position: fixed;
   white-space: nowrap;
   will-change: transform;
   animation: forward 10s linear infinite;
 }
-
+/* The forward-moving marquee animation is defined here as an infinitely looping transition */
 @keyframes forward {
   from { transform: translateX(-50%); }
   to { transform: translateX(0%); }
 }
-
+/* The backward-moving marquee is styled according to this rule set with corresponding animation property */
 .backward {
   position: fixed;
   white-space: nowrap;
   will-change: transform;
   animation: backward 10s linear infinite;
 }
-
+/* The forward-moving marquee animation is defined here as an infinitely looping transition */
 @keyframes backward {
   from { transform: translateX(0%); }
   to { transform: translateX(-50%); }
 }
+/* The text on the marquee buttons inverts when hovered over, as defined by this rule set and pseudoclass rule set */
+.button {
+  color: var(--color-2);
+  text-decoration:none;
+}
+.button:hover {
+  color: var(--color-1);
+  text-decoration:none;
+  transition:1s;
+}
 
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
+/* -----MEDIA BREAKPOINTS----- */
+/* A total of five media breakpoints are specified to reformat the interface based on several mobile devices. */
+
+/* iPad Pro */
+@media only screen and (max-width: 1024px) {
+  .vector#settings-bar{
+    margin-top:15vh;
+    margin-left:5vw;
+    width: 15vw;
+    height:70vh;
+  }
+  .vector#settings-bar>svg{
+    width:15vw;
+  }
+  .flex-container {
+    margin-left: 20vw;
+  }
+  .textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:90vw;
+    margin-left: 5vw;
+  }
+  h1 {
+    font-size: 7vw;
+    width:80vw;
+  }
+  p {
+    font-size: 4vw;
+    padding:5vw;
+    line-height: 3.5vh;
+  }
+}
+/* iPhone X */
+@media only screen and (max-width: 375px) {
+  .vector#settings-bar{
+    margin-top:13vh;
+    margin-left:5vw;
+    width: 90vw;
+    height:15vh;
+    flex-direction:row;
+  }
+  .vector#settings-bar>svg{
+    width:15vw;
+  }
+  .flex-container {
+    margin-left: 0;
+    height:85vh;
+    align-items: flex-end;
+  }
+  .vector{
+    height: 60vh;
+  }
+  .textbox {
+    margin-top:13vh;
+    height:73vh;
+  }
+  p {
+    font-size: 5.2vw;
+    padding:5vw;
+    line-height: 3.3vh;
+  }
+}
+/* iPhone 6/7/8 */
+@media only screen and (max-height: 667px) {
+  p {
+    font-size: 5vw;
+    padding:5vw;
+    line-height: 3.2vh;
+  }
+}
+/* iPhone 6+/7+/8+ */
+@media only screen and (max-width: 414px) {
+  .vector#settings-bar{
+    margin-top:15vh;
+    margin-left:5vw;
+    width: 90vw;
+    height:15vh;
+    flex-direction:row;
+  }
+  .vector#settings-bar>svg{
+    width:15vw;
+  }
+  .flex-container {
+    display: flex;
+    margin-left: 0;
+    height:85vh;
+    align-items: flex-end;
+  }
+  .vector{
+    height: 60vh;
+  }
+  p {
+    font-size: 5vw;
+    padding:5vw;
+    line-height: 3.2vh;
+  }
+}
+/* iPhone 4 */
+@media only screen and (max-width: 320px) {
+  .vector{
+    height: 55vh;
+  }
+  .textbox {
+    height:68vh;
+    margin-top:15vh;
+  }
+  p {
+    font-size: 4.2vw;
   }
 }
