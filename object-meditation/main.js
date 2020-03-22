@@ -1,4 +1,4 @@
-let myLevel = 1, myDrawer = 0, myFile = 0, myBlur = 40, mySaturation = 0; fadeTime = 1000;
+let myLevel = 1, myDrawer = 0, myFile = 0, myBlur = 40, mySaturation = 0, fadeTime = 1000, settingsBar = false, textbox = true;
 
 let c = document.getElementById("imageCanvas");
 let ctx = c.getContext("2d");
@@ -8,10 +8,15 @@ ctx.fillRect(0, 0, c.width, c.height);
 
 loopDraw();
 
+$("#info").fadeOut(1);
+$("#light").fadeOut(1);
+$("#dark").fadeOut(1);
+$("#matrix").fadeOut(1);
+
 annyang.start();
 if (annyang) {
   var commands = {
-    'the': function() {
+    'hello': function() {
       alert('world!');
     }
   }
@@ -115,11 +120,52 @@ function back() {
   }
 }
 
-function textboxVisible(myBool) {
-  if (myBool) $(".textbox").fadeIn(fadeTime);
-  else $(".textbox").fadeTo( fadeTime , 0, function() {
-    $(".textbox").css("visibility", "hidden");
-  });
+function colorMode(mode) {
+  $("#colorWrap").removeClass("light");
+  $("#colorWrap").removeClass("dark");
+  $("#colorWrap").removeClass("matrix");
+  if (mode=="light") {
+    console.log("light mode");
+    $("#colorWrap").addClass("light");
+  }
+  else if (mode=="dark") {
+    console.log("dark mode");
+    $("#colorWrap").toggleClass("dark");
+  }
+  else {
+    console.log("matrix mode");
+    $("#colorWrap").toggleClass("matrix");
+  }
+}
+
+function textboxVisible() {
+  if (textbox) {
+    $(".textbox").fadeTo( fadeTime , 0, function() {
+      $(".textbox").css("visibility", "hidden");
+    });
+  }
+  else {
+    $(".textbox").fadeTo( fadeTime , 1, function() {
+      $(".textbox").css("visibility", "visible");
+    });
+  }
+  textbox=!textbox;
+}
+
+function settingsBarVisible() {
+  if (settingsBar) {
+    $("#info").fadeOut(fadeTime);
+    $("#light").fadeOut(fadeTime);
+    $("#dark").fadeOut(fadeTime);
+    $("#matrix").fadeOut(fadeTime);
+  }
+  else {
+    $("#info").fadeIn(fadeTime);
+    $("#light").fadeIn(fadeTime);
+    $("#dark").fadeIn(fadeTime);
+    $("#matrix").fadeIn(fadeTime);
+  }
+  settingsBar = !settingsBar;
 }
 
 // myBool true/false determines show/hide operation

@@ -8,18 +8,33 @@ body {
   box-sizing: inherit;
 }
 
+#colorWrap.light {
+  --color-1: white;
+  --color-2: black;
+}
+
+#colorWrap.dark {
+  --color-1: black;
+  --color-2: white;
+}
+
+#colorWrap.matrix {
+  --color-1: black;
+  --color-2: lime;
+}
+
 body {
   font-size: 7vh;
   font-family: 'IBM Plex Mono' ;
 }
 
 .button {
-  color: black;
+  color: var(--color-2);
   text-decoration:none;
 }
 
 .button:hover {
-  color: white;
+  color: var(--color-1);
   text-decoration:none;
   transition:1s;
 }
@@ -33,16 +48,34 @@ body {
 
 .vector{
   height: 70vh;
-  fill:white;
-  stroke:black;
+  fill:var(--color-1);
+  stroke:var(--color-2);
   stroke-width:13px;
   stroke-linecap:round;
   stroke-linejoin:round;
 }
 
+.vector#settings-bar{
+  display:flex;
+  position:fixed;
+  margin-top:15vh;
+  margin-left:4vh;
+  width: 100px;
+  height:70vh;
+  flex-direction:column;
+  align-items: flex-start;
+  justify-content: space-between;
+  stroke-width:13px;
+  stroke:var(--color-2);
+}
+
+.vector#settings-bar>svg{
+  width:100px;
+}
+
 .vectorButton>g:hover {
   transition:0.3s ease-in-out;
-  fill:black;
+  fill:var(--color-2);
 }
 
 h1 {
@@ -62,9 +95,10 @@ p {
 .textbox {
   /* display: flex; */
   position: fixed;
-  background-color: white;
-  border-color: black;
-  border-style: inset;
+  background-color: var(--color-1);
+  border-color: var(--color-2);
+  color: var(--color-2);
+  border-style: solid;
   border-width: 5px;
   margin-top: 15vh;
   width:70vw;
@@ -77,8 +111,8 @@ p {
 }
 
 .textbox:hover {
-  background-color:black;
-  color:white;
+  background-color:var(--color-2);
+  color:var(--color-1);
 }
 
 /* Used flexbox alignment and justification */
@@ -93,15 +127,15 @@ p {
   position: fixed;
   width: 100vw;
   height: 10vh;
-  background-color: white;
-  border-color: black;
-  border-style: inset;
+  background-color: var(--color-1);
+  border-color: var(--color-2);
+  border-style: solid;
   border-width: 5px;
   transition:1s;
 }
 
 .marquee:hover {
-  background-color:black;
+  background-color:var(--color-2);
 }
 
 .marquee:nth-of-type(2) {
