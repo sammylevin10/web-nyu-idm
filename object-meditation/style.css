@@ -1,3 +1,25 @@
+/* CSS RESOURCES
+Color modes
+  >https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+  >https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
+  >https://www.w3schools.com/css/css3_variables.asp
+Working with the HTML canvas
+  >https://stackoverflow.com/questions/17006812/make-canvas-the-background-of-an-html-document
+Working with SVGs
+  >https://www.w3schools.com/graphics/svg_stroking.asp
+  >https://www.w3docs.com/learn-css/stroke-linecap.html
+Importing fonts
+  >https://codeburst.io/intro-to-google-fonts-for-web-developers-5559b63807d3
+Flexbox
+  >http://flexboxfroggy.com/
+CSS animations
+  >https://www.w3schools.com/css/css3_animations.asp
+  >https://www.w3schools.in/css3/css-marquee/
+  >https://stackoverflow.com/questions/21233033/how-can-i-create-a-marquee-effect
+Mobile breakpoints
+  >https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp
+*/
+
 html,
 body {
   margin: 0;

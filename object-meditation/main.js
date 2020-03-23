@@ -1,3 +1,15 @@
+/* JS RESOURCES
+Using the HTML Canvas
+  >https://www.w3schools.com/html/html5_canvas.asp
+  >https://www.w3schools.com/tags/canvas_drawimage.asp
+  >https://davidwalsh.name/canvas-filters
+JQuery
+  >https://api.jquery.com/fadeto/
+  >https://www.w3schools.com/jquery/jquery_fade.asp
+  >https://api.jquery.com/toggleclass/
+  >https://stackoverflow.com/questions/56511466/how-to-create-a-jquery-function-to-toggle-dark-mode
+*/
+
 let myLevel = 1,        //myLevel stores which directory the user is currently in (1=Cabinet, 2=Drawer, 3=File)
   myDrawer = 0,         //myDrawer stores which drawer the user selected
   myFile = 0,           //myFile stores which file the user selected
@@ -24,6 +36,9 @@ $("#light").fadeOut(0);
 $("#dark").fadeOut(0);
 $("#matrix").fadeOut(0);
 
+// -----DRAWING FUNCTIONS-----
+// Images are drawn to the canvas background corresponding to what level, drawer, or file the user selected
+
 //The draw() function is an abstraction of the HTML canvas' drawImage() function and serves as a helper function to loopDraw()
 function draw(myImage, sx, sy, sw, sh, x, y, w, h) {
   let ctx = document.getElementById("imageCanvas").getContext('2d');
@@ -37,7 +52,6 @@ function draw(myImage, sx, sy, sw, sh, x, y, w, h) {
     ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
   }
 }
-
 //loopDraw draws a grid of images to the canvas, depending on the user's level
 //Values are hardcoded because the HTML canvas' dimensions are not adaptive, meaning pixels are not always square. Hence, an adaptive function for maintaining image aspect ratios would be quite a challenge to write.
 function loopDraw() {
@@ -85,6 +99,35 @@ function loopDraw() {
   }
 }
 
+// -----SELECTOR FUNCTIONS-----
+// The user can jump between levels (directories) by choosing a specific drawer or file to view, or stepping back one level
+
+//The go() function enables the user to select a drawer when on level 1
+function go(x) {
+  myDrawer = x;
+  //myBlur and mySaturation are decremented to yield a clearer image after every selection
+  if (myBlur > -1) myBlur -= 2, mySaturation += 0.05;
+  if (myLevel != 3) myLevel += 1;
+  //loopDraw() is invoked to draw the corresponding images to canvas
+  loopDraw();
+  //The necessary vectors are made visible or invisible in order to visualize the transition from level 1 to level 2
+  cabinetVisible(false);
+  drawerVisible(true, myDrawer);
+  fileVisible(true, myDrawer * 10, myDrawer * 10 + 10);
+}
+//The gogo() function enables the user to select a file when on level 2
+function gogo(x) {
+  myFile = x;
+  //myBlur and mySaturation are decremented to yield a clearer image after every selection
+  if (myBlur > -1) myBlur -= 2, mySaturation += 0.05;
+  if (myLevel != 3) myLevel += 1;
+  //loopDraw() is invoked to draw the corresponding images to canvas
+  loopDraw();
+  //The necessary vectors are made visible or invisible in order to visualize the transition from level 2 to level 3
+  elementClickable("Files", false);
+  drawerVisible(true, 0);
+  fileVisible(true, myFile, myFile + 1);
+}
 //The random() function enables the user to make a random selection of a drawer or file
 function random() {
   let mySelection;
@@ -100,35 +143,6 @@ function random() {
     gogo(mySelection);
   }
 }
-
-//The go() function enables the user to select a drawer when on level 1
-function go(x) {
-  myDrawer = x;
-  //myBlur and mySaturation are decremented to yield a clearer image after every selection
-  if (myBlur > -1) myBlur -= 2, mySaturation += 0.05;
-  if (myLevel != 3) myLevel += 1;
-  //loopDraw() is invoked to draw the corresponding images to canvas
-  loopDraw();
-  //The necessary vectors are made visible or invisible in order to visualize the transition from level 1 to level 2
-  cabinetVisible(false);
-  drawerVisible(true, myDrawer);
-  fileVisible(true, myDrawer * 10, myDrawer * 10 + 10);
-}
-
-//The gogo() function enables the user to select a file when on level 2
-function gogo(x) {
-  myFile = x;
-  //myBlur and mySaturation are decremented to yield a clearer image after every selection
-  if (myBlur > -1) myBlur -= 2, mySaturation += 0.05;
-  if (myLevel != 3) myLevel += 1;
-  //loopDraw() is invoked to draw the corresponding images to canvas
-  loopDraw();
-  //The necessary vectors are made visible or invisible in order to visualize the transition from level 2 to level 3
-  elementClickable("Files", false);
-  drawerVisible(true, 0);
-  fileVisible(true, myFile, myFile + 1);
-}
-
 //The back() function enables the user to navigate back one level
 function back() {
   //myLevel is decremented with error-catching in the event of multiple clicks
@@ -149,6 +163,9 @@ function back() {
   }
 }
 
+// -----COLOR MODES-----
+// Different color modes can be selected to change the look and feel of the website
+
 //The colorMode() function modifies HTML classes in order for CSS to alter color variables referenced by other rule sets
 function colorMode(mode) {
   //The colorWrap wrapper id is stripped of any corresponding classes, which determine the color variables in CSS
@@ -164,6 +181,9 @@ function colorMode(mode) {
     $("#colorWrap").toggleClass("matrix");
   }
 }
+
+// -----VISIBILITY/CLICKABILITY FUNCTIONS-----
+// Different vectors are made visible, invisible, clickable, or unclickable depending on the user's level and selection
 
 //The textboxVisible() function toggles the visibility of the informational textbox
 function textboxVisible() {
@@ -181,7 +201,6 @@ function textboxVisible() {
   //The textbox flag is inverted
   textbox = !textbox;
 }
-
 //The settingsBarVisible() function toggles the visibility of the expanded settings bar
 function settingsBarVisible() {
   //JQuery is used to fade out the textbox
@@ -200,7 +219,6 @@ function settingsBarVisible() {
   //The settingsBar flag is inverted
   settingsBar = !settingsBar;
 }
-
 //The cabinetVisible() function assigns the visibility of the cabinet vector based on the myBool argument
 function cabinetVisible(myBool) {
   if (myBool) $("#Cabinet").fadeIn(fadeTime);
@@ -208,7 +226,6 @@ function cabinetVisible(myBool) {
   //elementClickable() is invoked as a helper method to prevent drawers from inverting when moused over as the cabinet disappears
   elementClickable("Drawers", myBool);
 }
-
 // The drawerVisible() function assigns the visibility of drawer vectors based on the myBool argument
 // myInt 0-3 determines the unit upon which the operation is uniquely applied
 // For example, true=show apply 2 would show drawer 2 only
@@ -225,7 +242,6 @@ function drawerVisible(myBool, myInt) {
     }
   }
 }
-
 // The settingsBarVisible() function assigns the visibility of the cabinet vector based on the myBool argument
 // myMin is an inclusive bottom selector of units upon which the operation is uniquely applied
 // myMax is an exclusive top selector of units upon which the operation is uniquely applied
@@ -243,7 +259,6 @@ function fileVisible(myBool, myMin, myMax) {
     }
   }
 }
-
 //The elementClickable() function is a helper method that modifies the :hover pseudoclass for clickable vectors, signalling to users that the vector is not longer a button
 function elementClickable(myId, myBool) {
   if (myBool == true) {
