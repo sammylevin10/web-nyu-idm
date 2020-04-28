@@ -1,12 +1,28 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Manrope', sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
-/* .header-element {
-  width:30vw;
-  background-color: blue;
-} */
+a {
+  text-decoration: none;
+  color:black;
+  border-bottom: 1px solid white;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+a:hover {
+  border-bottom: 1px solid black;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
 .header {
   position: absolute;
   display: flex;
@@ -16,9 +32,9 @@ body {
 
 #header {
   position: fixed;
-  top: 3vw;
+  top: 1vw;
   left: 3vw;
-  bottom: 0;
+  /* bottom: 0; */
   right: 3vw;
   display: flex;
   align-items: flex-start;
@@ -36,8 +52,12 @@ body {
 } */
 
 .slide {
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .wrapper {
   display: flex;
@@ -56,4 +76,48 @@ body {
 }
 .four {
   background: #00dfdf;
+}
+
+.thumbnail {
+  width:30vw;
+  /* height:50vh; */
+}
+
+.menu-wrapper {
+  transform: rotate(-90deg);
+  transform-origin: 0% 0%;
+  width: 100vh;
+  height: 50px;
+  position:fixed;
+}
+.menu {
+    transform: translate(-100vh,0px);
+    width: 100vh;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    position: fixed;
+    /* padding: -5px; */
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+  }
+.menu-item {
+  /* transform-origin: 0 100%; */
+  color:black;
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+#title-item {
+  /* transform: rotate(90deg); */
+  width:210px;
+  margin-bottom: -5px;
+  margin-right: -15px;
+}
+#title-item:hover {
+  border-bottom: none;
 }
