@@ -52,12 +52,16 @@ a:hover {
 } */
 
 .slide {
-  width: 50vw;
+  width: 1200px;
   height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+}
+#spacer {
+  width: 50px;
+  height: 100vh;
 }
 .wrapper {
   display: flex;
@@ -66,7 +70,7 @@ a:hover {
 
 }
 .one {
-  background: #efdefe;
+  background: orange;
 }
 .two {
   background: #a3f3d3;
@@ -112,12 +116,17 @@ a:hover {
   font-weight: 300;
   margin-bottom: 10px;
 }
-#title-item {
+#title-image {
   /* transform: rotate(90deg); */
   width:210px;
-  margin-bottom: -5px;
-  margin-right: -15px;
+  margin-bottom: 5px;
+  margin-right: -10px;
+  border-bottom:none;
 }
-#title-item:hover {
+#title-image:hover {
   border-bottom: none;
+  -webkit-transform: skewX(0deg);
+  -moz-transform: skewX(0deg);
+  -o-transform: skewX(0deg);
+  transform: skewX(0deg);
 }
