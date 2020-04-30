@@ -1,5 +1,6 @@
 console.log("Script is here");
 
+
 $(document).ready(function() {
   console.log("hello");
     $('html, body, *').mousewheel(function(e, delta) {
@@ -10,7 +11,7 @@ $(document).ready(function() {
 });
 
 window.addEventListener('scroll', function(e) {
-
+  // console.log($('#sammy').is(':offscreen'));
   const target1 = document.querySelectorAll('.parallax1');
   const target2 = document.querySelectorAll('.parallax2');
   const target3 = document.querySelectorAll('.parallax3');
@@ -18,14 +19,19 @@ window.addEventListener('scroll', function(e) {
   var rate1 = scrolled*0.5;
   var rate2 = scrolled*0.3;
   var rate3 = scrolled*0.1;
+  var skew = scrolled*0.05;
+  if (skew>60) skew=60;
   for (let i = 0; i<target1.length; i++) {
     target1[i].style.transform = 'translate3d('+rate1+'px, 0px, 0px)';
+    target1[i].style.transform += 'skewX(-'+skew+'deg)';
   }
   for (let i = 0; i<target2.length; i++) {
     target2[i].style.transform = 'translate3d('+rate2+'px, 0px, 0px)';
+    target2[i].style.transform += 'skewX(-'+skew+'deg)';
   }
   for (let i = 0; i<target3.length; i++) {
     target3.style.transform = 'translate3d('+rate3+'px, 0px, 0px)';
+    target2[i].style.transform += 'skewX(-'+skew+'deg)';
   }
 });
 
