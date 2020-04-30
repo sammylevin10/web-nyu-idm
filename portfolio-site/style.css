@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Manrope', sans-serif;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 1);
   overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
@@ -70,7 +70,7 @@ a:hover {
 
 }
 .one {
-  background: orange;
+  background: black;
 }
 .two {
   background: #a3f3d3;
@@ -80,6 +80,15 @@ a:hover {
 }
 .four {
   background: #00dfdf;
+}
+
+h1 {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 400;
+  font-size: 200px;
+  color:white;
+  margin: 0;
+  padding: 0;
 }
 
 .thumbnail {
@@ -131,6 +140,14 @@ a:hover {
   transform: skewX(0deg);
 }
 
-#section-intro {
+#test-description {
 
+}
+
+/* HOME PAGE */
+#sammy {
+  position:relative;
+  top:100px;
+  left:100px;
+  /* transform: translate3d(100px, 100px, 100px); */
 }

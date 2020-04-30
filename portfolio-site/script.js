@@ -9,6 +9,26 @@ $(document).ready(function() {
 
 });
 
+window.addEventListener('scroll', function(e) {
+
+  const target1 = document.querySelectorAll('.parallax1');
+  const target2 = document.querySelectorAll('.parallax2');
+  const target3 = document.querySelectorAll('.parallax3');
+  var scrolled = window.pageXOffset;
+  var rate1 = scrolled*0.5;
+  var rate2 = scrolled*0.3;
+  var rate3 = scrolled*0.1;
+  for (let i = 0; i<target1.length; i++) {
+    target1[i].style.transform = 'translate3d('+rate1+'px, 0px, 0px)';
+  }
+  for (let i = 0; i<target2.length; i++) {
+    target2[i].style.transform = 'translate3d('+rate2+'px, 0px, 0px)';
+  }
+  for (let i = 0; i<target3.length; i++) {
+    target3.style.transform = 'translate3d('+rate3+'px, 0px, 0px)';
+  }
+});
+
 
 //JS SMOOTH ANCHORS
 // $("a[href^='#']").click(function(e) {
