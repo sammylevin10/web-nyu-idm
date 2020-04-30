@@ -11,14 +11,17 @@ $(document).ready(function() {
 });
 
 window.addEventListener('scroll', function(e) {
-  // console.log($('#sammy').is(':offscreen'));
   const target1 = document.querySelectorAll('.parallax1');
   const target2 = document.querySelectorAll('.parallax2');
   const target3 = document.querySelectorAll('.parallax3');
+  const target4 = document.querySelectorAll('.down1');
+  const target5 = document.querySelectorAll('.right1');
   var scrolled = window.pageXOffset;
+  console.log(scrolled);
   var rate1 = scrolled*0.5;
   var rate2 = scrolled*0.3;
   var rate3 = scrolled*0.1;
+  var down1 = scrolled*0.3;
   var skew = scrolled*0.05;
   if (skew>60) skew=60;
   for (let i = 0; i<target1.length; i++) {
@@ -32,6 +35,18 @@ window.addEventListener('scroll', function(e) {
   for (let i = 0; i<target3.length; i++) {
     target3.style.transform = 'translate3d('+rate3+'px, 0px, 0px)';
     target2[i].style.transform += 'skewX(-'+skew+'deg)';
+  }
+  for (let i = 0; i<target4.length; i++) {
+    let limit = 1500;
+    if(scrolled<=limit) {
+      target4[i].style.transform = 'translate3d('+scrolled+'px, -'+down1+'px, 0px)';
+    }
+    else {
+      target4[i].style.transform = 'translate3d('+scrolled+'px, -'+limit*0.3+'px, 0px)';
+    }
+  }
+  for (let i = 0; i<target5.length; i++) {
+    target5[i].style.transform = 'translate3d('+scrolled+'px, 0px, 0px)';
   }
 });
 
