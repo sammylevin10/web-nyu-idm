@@ -4,7 +4,7 @@ $(document).ready(function() {
   $(".menu").hide();
   console.log("hello");
     $('html, body, *').mousewheel(function(e, delta) {
-        this.scrollLeft -= (delta * 0.5);
+        this.scrollLeft -= (delta * 0.8);
         e.preventDefault();
     });
 
@@ -49,10 +49,10 @@ window.addEventListener('scroll', function(e) {
     target5[i].style.transform = 'translate3d('+scrolled+'px, 0px, 0px)';
   }
   if (scrolled>=3000) {
-    $(".menu").fadeIn(1000);
+    $(".menu").fadeIn(500);
   }
   else {
-    $(".menu").fadeOut(1000);
+    $(".menu").fadeOut(500);
   }
 });
 
