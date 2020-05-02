@@ -1,3 +1,7 @@
+:root {
+  --highlight: #4fffd9;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,6 +20,7 @@ a {
   transition: all 1s;
 }
 a:hover {
+  background-color: var(--highlight);
   border-bottom: 1px solid black;
   -webkit-transform: skewX(-20deg);
   -moz-transform: skewX(-20deg);
@@ -23,35 +28,8 @@ a:hover {
   transform: skewX(-20deg);
 }
 
-.header {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-#header {
-  position: fixed;
-  top: 1vw;
-  left: 3vw;
-  /* bottom: 0; */
-  right: 3vw;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-#left {
-  /* flex-grow: 1; */
-}
-#right {
-  /* flex-grow: 1; */
-  /* overflow-y: auto; */
-}
-/* .scroll {
-  height: 300vw;
-} */
-
 .slide {
+  position: absolute;
   width: 1400px;
   height: 1000px;
   /* display: flex;
@@ -59,31 +37,43 @@ a:hover {
   align-items: center;
   justify-content: center; */
 }
-#spacer {
+/* #spacer {
   width: 50px;
   height: 100vh;
+} */
+.outer-wrapper {
+  /* position: relative; */
+  overflow: hidden;
+  width:7000px;
 }
 .wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 500vw;
+  /* display: flex;
+  flex-direction: row; */
+  width: 6000px;
 
 }
 .one {
+  position:absolute;
+  clip: rect(0px,220vw,100vh,0px);
   background: black;
-  width: 3000px;
+  width: 220vw;
 }
 .two {
+  clip: rect(0px,350vw,100vh,0px);
   background: white;
+  width: 350vw;
 }
 .three {
-  background: #0bbaa0;
+  background: green;
+  width: 450vw;
 }
 .four {
-  background: #00dfdf;
+  background: yellow;
+  width: 550vw;
 }
 
 h1 {
+  position: absolute;
   font-family: 'Space Mono', monospace;
   font-weight: 600;
   font-size: 200px;
@@ -92,12 +82,28 @@ h1 {
   padding: 0;
 }
 h2 {
+  position: absolute;
   font-family: 'Space Mono', monospace;
   font-weight: 600;
   font-size: 100px;
   color:white;
   margin: 0;
   padding: 0;
+}
+h3 {
+  position:absolute;
+  font-size:50px;
+  color:black;
+}
+p {
+  font-family: "Heebo";
+  position:absolute;
+  font-size: 20px;
+  font-weight: normal;
+  color:black;
+}
+.highlight {
+  background-color: var(--highlight);
 }
 
 .image-large {
@@ -159,36 +165,53 @@ h2 {
 }
 
 /* HOME PAGE */
-#sammy {
-  position:absolute;
-  top:-50px;
-  left:80px;
-}
-#levin {
-  position: absolute;
-  bottom:-40px;
-  left:500px;
-}
-#home-image {
-  position:absolute;
-  top:150px;
-  left:250px;
-}
 #verbs {
-  position:absolute;
+  -webkit-transition: color 0.4s ease;
+  -moz-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+  position: fixed;
   text-align: right;
   line-height: 0.9;
   top:46vh;
   left:300px;
 }
 #er {
-  position: absolute;
+  -webkit-transition: color 0.4s ease;
+  -moz-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+  position: fixed;
   top:42.2vh;
   left:910px;
 }
 #gradient {
+  /* visibility: hidden; */
   position: absolute;
   left:0;
-  width: 3000px;
+  width: 250vw;
   height: 100vh;
+}
+
+/* ABOUT PAGE */
+#wrapper-two {
+  position:absolute;
+  left:130vw;
+  width:100vw;
+}
+#headline {
+  font-size: 40px;
+  top: 20vh;
+  width: 70vw;
+}
+#introduction {
+  top: 45vh;
+  width:50vw;
+}
+#self-portrait {
+  position:absolute;
+  top: 25vh;
+  left: 230vw;
+  opacity: 0.5;
+  height:50vh;
 }
