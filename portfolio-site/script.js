@@ -9,17 +9,9 @@ $(document).ready(function() {
     });
   window.addEventListener('scroll', function(e) {
     var scrolled = window.pageXOffset;
-    console.log(scrolled);
     assignParallax(scrolled);
-    console.log("you are scrolling");
     assignMotion(scrolled);
     assignLimits(scrolled);
-
-
-
-    // else {
-    //   $(".menu").fadeOut(500);
-    // }
   });
 });
 
@@ -42,29 +34,21 @@ function assignParallax(scrolled) {
 }
 
 function assignMotion(scrolled) {
-  console.log("reached assignMotion");
   const target1 = document.querySelectorAll('.down1');
-  // const target2 = document.querySelectorAll('.right1');
-  console.log(target1[0]);
   var down1 = scrolled*0.3;
-  // var right1 = scrolled;
   for (let i = 0; i<target1.length; i++) {
     target1[i].style.transform = 'translate3d(0px, -'+down1+'px, 0px)';
-    // target1[i].style.color="red";
   }
-  // for (let i = 0; i<target2.length; i++) {
-  //   target2[i].style.transform = 'translate3d('+scrolled+'px, 0px, 0px)';
-  // }
 }
 
 function assignLimits(scrolled) {
   //Verbs, -Er
   let limit1 = 1500;
-  let limit2 = 2600;
+  let limit2 = 2300;
   let limit3 = 3200;
+  let limit4 = 4000;
   const verbs = document.querySelector('#verbs');
   if (scrolled>=limit1) {
-    console.log("LIMIT");
     verbs.style.transform = 'translate3d(0px, -'+limit1*0.3+'px, 0px)';
     $("#verbs").css("color","black");
     $("#game-chang").css("color","#4fffd9");
@@ -89,4 +73,38 @@ function assignLimits(scrolled) {
   else {
     $(".menu").fadeOut(500);
   }
+  if (scrolled>=limit4) {
+    $("#wrapper-two").fadeOut(1000);
+    $("#self-portrait").fadeOut(1000);
+  }
+  else {
+    $("#wrapper-two").fadeIn(1000);
+    $("#self-portrait").fadeIn(1000);
+  }
+}
+
+function scrollToSection(destination) {
+  if (destination=="intro") {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+  if (destination=="about") {
+    window.scrollTo({
+      top: 0,
+      left: 3300,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// var link1 = document.getElementById("wrapper-three");
+// var img1 = document.getElementById("img-metro-archive");
+document.getElementById("metro-archive").addEventListener("mouseover", displayImage(1));
+function displayImage(num) {
+  console.log("mouseover");
+  alert("mouseover");
+  img1.style.display = "block";
 }
