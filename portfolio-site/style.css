@@ -61,9 +61,10 @@ body {
   width: 350vw;
 }
 .three {
+  clip: rect(0px,470vw,100vh,0px);
   scroll-snap-align: center;
-  background: lightgrey;
-  width: 500vw;
+  background: #CCCCCC;
+  width: 470vw;
 }
 .four {
   background: yellow;
@@ -191,21 +192,25 @@ p {
   -moz-transition: color 0.4s ease;
   -o-transition: color 0.4s ease;
   transition: color 0.4s ease;
-  position: fixed;
+  position: absolute;
   text-align: right;
   line-height: 0.9;
-  top:42vh;
-  left:24vw;;
+  /* left:0px; */
 }
 #er {
   -webkit-transition: color 0.4s ease;
   -moz-transition: color 0.4s ease;
   -o-transition: color 0.4s ease;
   transition: color 0.4s ease;
-  position: fixed;
+  position: absolute;
   line-height: 0.9;
-  top:42vh;
-  left:66.3vw;
+  /* top:42vh; */
+  left:610px;
+}
+#verbs-er {
+  position:fixed;
+  left:20%;
+  top:42%;
 }
 #intro-text {
   color:red
@@ -232,10 +237,10 @@ p {
 #headline {
   font-size: 40px;
   top: 20vh;
-  width: 70vw;
+  width: 1000px;
 }
 #introduction {
-  top: 45vh;
+  top: 48vh;
   width:50vw;
 }
 #self-portrait {
@@ -253,25 +258,45 @@ p {
   width:100vw;
 }
 #wrapper-three>h2>a {
-  color:grey;
+  color: #555555;
   font-size: 50px;
   text-decoration: none;
+  transition: 1s;
+}
+#wrapper-three>h2>a:hover {
+  background: linear-gradient(0.25turn, var(--highlight) 50%, rgba(79, 255, 217, 0) 100%);
+  /* border-bottom: 1px solid black; */
 }
 #wrapper-three>h2 {
-  line-height: 0.9;
+  line-height: 0.93;
 }
 #project-header {
+  color:black;
+  font-size:80px;
   top: 20vh;
 }
 #projects {
   top: 35vh;
 }
-#img-metro-archive {
-  height:50vh;
+#thumbnails {
+  position: absolute;
+  height:70vh;
+  width:400px;
+  background-color: #DDDDDD;
+  top:15vh;
+  left:310vw;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  clip: rect(0px,400px,70vh,0px);
+
+}
+#thumbnails>img {
+  height:70vh;
   position: fixed;
-  right:0;
-  bottom:0;
-  display: none;
+  opacity: 0.5;
+  /* filter: contrast(50%); */
+  /* filter: brightness(100%); */
 }
 .client {
   font-family: "Heebo";

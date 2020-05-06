@@ -2,6 +2,7 @@ console.log("Script is here");
 
 $(document).ready(function() {
   $(".menu").hide();
+  $(".thumbnail").hide();
   console.log("hello");
     $('html, body, *').mousewheel(function(e, delta) {
         this.scrollLeft -= (delta * 0.8);
@@ -98,13 +99,34 @@ function scrollToSection(destination) {
       behavior: 'smooth'
     });
   }
+  if (destination=="portfolio") {
+    window.scrollTo({
+      top: 0,
+      left: 5100,
+      behavior: 'smooth'
+    });
+  }
+  if (destination=="contact") {
+    window.scrollTo({
+      top: 0,
+      left: 6800,
+      behavior: 'smooth'
+    });
+  }
 }
 
-// var link1 = document.getElementById("wrapper-three");
-// var img1 = document.getElementById("img-metro-archive");
-document.getElementById("metro-archive").addEventListener("mouseover", displayImage(1));
 function displayImage(num) {
-  console.log("mouseover");
-  alert("mouseover");
-  img1.style.display = "block";
+  if (num==1) $("#img-metro-archive").fadeIn(500);
+  else if (num==2) $("#img-gait-mocap").fadeIn(500);
+  else if (num==3) $("#img-design-shanghai").fadeIn(500);
+  else if (num==4) $("#img-cyberbird").fadeIn(500);
+  else if (num==5) $("#img-ny-state-of-mind").fadeIn(500);
+}
+
+function hideImage(num) {
+  if (num==1) $("#img-metro-archive").fadeOut(500);
+  else if (num==2) $("#img-gait-mocap").fadeOut(500);
+  else if (num==3) $("#img-design-shanghai").fadeOut(500);
+  else if (num==4) $("#img-cyberbird").fadeOut(500);
+  else if (num==5) $("#img-ny-state-of-mind").fadeOut(500);
 }

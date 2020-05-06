@@ -46,16 +46,22 @@
 
         <div class="slide four"></div>
         <div class="slide three">
+          <div class = "parallax2" id = "thumbnails">
+            <img src = "images/home/metro-archive.jpg" class = "thumbnail" id = "img-metro-archive"></img>
+            <img src = "images/home/gait-mocap.jpg" class = "thumbnail" id = "img-gait-mocap"></img>
+            <img src = "images/home/design-shanghai.jpg" class = "thumbnail" id = "img-design-shanghai"></img>
+            <img src = "images/home/cyberbird.jpg" class = "thumbnail" id = "img-cyberbird"></img>
+            <img src = "images/home/ny-state-of-mind.jpg" class = "thumbnail" id = "img-ny-state-of-mind"></img>
+          </div>
           <div class = "parallax1" id = "wrapper-three">
             <h2 id = "project-header">SELECTED PROJECTS</h2>
             <h2 id = "projects">
-              <a href = "http://google.com" id = "metro-archive">METRO ARCHIVE<span class = "client"> - the new york times</span></a><br>
-              <a href = "http://google.com" id = "mocap-gait-analysis">MOCAP GAIT ANALYSIS<span class = "client"> - mickey's movement</span></a><br>
-              <a href = "http://google.com" id = "design-shanghai">DESIGN SHANGHAI<span class = "client"> - imondi flooring</span></a><br>
-              <a href = "http://google.com" id = "cyberbird">CYBERBIRD<span class = "client"> - nyu makerspace</span></a><br>
-              <a href = "http://google.com" id = "ny-state-of-mind">NY STATE OF MIND<span class = "client"> - nyu idm</span></a><br>
+              <a href = "http://google.com" id = "metro-archive" onmouseover="displayImage(1)" onmouseout="hideImage(1)">METRO ARCHIVE<span class = "client"> - the new york times</span></a><br>
+              <a href = "http://google.com" id = "gait-mocap" onmouseover="displayImage(2)" onmouseout="hideImage(2)">GAIT MOCAP<span class = "client"> - mickey's movement</span></a><br>
+              <a href = "http://google.com" id = "design-shanghai" onmouseover="displayImage(3)" onmouseout="hideImage(3)">DESIGN SHANGHAI<span class = "client"> - imondi flooring</span></a><br>
+              <a href = "http://google.com" id = "cyberbird" onmouseover="displayImage(4)" onmouseout="hideImage(4)">CYBERBIRD<span class = "client"> - nyu makerspace</span></a><br>
+              <a href = "http://google.com" id = "ny-state-of-mind" onmouseover="displayImage(5)" onmouseout="hideImage(5)">NY STATE OF MIND<span class = "client"> - nyu idm</span></a><br>
             </h2>
-            <img src = "images/home/home-image.jpg" id = "img-metro-archive"></img>
           </div>
         </div>
         <div class="slide two">
@@ -67,14 +73,16 @@
           </div>
         </div>
         <div class="slide one" id="section-intro">
+          <div id = "verbs-er">
             <h1 class = "down1" id="verbs">TINKER<br>FILMMAK<br>PROGRAMM<br>3D DESIGN<br>PHOTOGRAPH<br><span id = "game-chang">GAME-CHANG</span></h1>
             <h1 class = "right1" id="er">ER</h1>
+          </div>
           <img id = "gradient" src="images/home/gradient-overlay.png"></img>
         </div>
         <div class="menu-wrapper">
           <div class="menu">
-            <a class="menu-item">Contact</a>
-            <a class="menu-item">Portfolio</a>
+            <a class="menu-item" onclick='scrollToSection("contact")'>Contact</a>
+            <a class="menu-item" onclick='scrollToSection("portfolio")'>Portfolio</a>
             <!-- <a class="menu-item">Featured</a> -->
             <a class="menu-item" onclick='scrollToSection("about")'>About</a>
             <!-- <div width=90px></div> -->
