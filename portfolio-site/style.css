@@ -67,8 +67,12 @@ body {
   width: 7000px;
 }
 .four {
-  background: yellow;
-  width: 600vw;
+  position: absolute;
+  clip: rect(0px,9000px,100vh,0px);
+  background-image: url('graphics/grid-2.png');
+  background-size: 500px 250px;
+  background-color: #888888;
+  width: 9000px;
 }
 
 h1 {
@@ -330,7 +334,7 @@ p {
 }
 #wrapper-three-flex>h3>a {
   padding:0;
-  margin:0;
+  padding-left: 10px;
   /* background-color: #00FF00; */
   color: #777777;
   text-decoration: none;
@@ -352,6 +356,7 @@ p {
   /* background-color:#FFFF00; */
   padding:0;
   margin:0;
+  padding-left: 10px;
   position:relative;
   /* top: 25vh; */
 }
@@ -384,4 +389,71 @@ p {
   font-style: italic;
   font-weight: 300;
   font-size: 30px;
+}
+/* CONTACT PAGE */
+#wrapper-four {
+  position: absolute;
+  left:4000px;
+  width:1000px;
+  height:100vh;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+#wrapper-four-flex {
+  /* background-color: blue; */
+  /* border-style: solid; */
+  width:1000px;
+  height:400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+#wrapper-four-flex>* {
+  color: black;
+  text-align: right;
+  position: relative;
+  padding:0;
+  margin:0;
+}
+#contact-description {
+  width:500px;
+}
+#social-bar {
+  font-size: 30px;
+}
+.fa {
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  /* margin: 5px 2px; */
+  background: white;
+  color: #888888;
+  font-size: 6em;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.fa:hover {
+  background-color: var(--highlight);
+  transform: scale(1.1);
+}
+#phone-wrapper {
+  /* position: relative; */
+  width:500px;
+  height:100vh;
+  position: absolute;
+  left: 5500px;
+  display: flex;
+  align-items: center;
+
+}
+#phone {
+  height:500px;
+  /* opacity: 0.5; */
 }

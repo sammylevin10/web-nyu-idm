@@ -109,7 +109,7 @@ function scrollToSection(destination) {
   if (destination=="contact") {
     window.scrollTo({
       top: 0,
-      left: 6800,
+      left: 7000,
       behavior: 'smooth'
     });
   }
