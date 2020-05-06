@@ -36,7 +36,7 @@ function assignParallax(scrolled) {
 
 function assignMotion(scrolled) {
   const target1 = document.querySelectorAll('.down1');
-  var down1 = scrolled*0.3;
+  var down1 = scrolled*0.35;
   for (let i = 0; i<target1.length; i++) {
     target1[i].style.transform = 'translate3d(0px, -'+down1+'px, 0px)';
   }
@@ -44,13 +44,13 @@ function assignMotion(scrolled) {
 
 function assignLimits(scrolled) {
   //Verbs, -Er
-  let limit1 = 1500;
+  let limit1 = 1285;
   let limit2 = 2300;
-  let limit3 = 3200;
+  let limit3 = 3000;
   let limit4 = 4000;
   const verbs = document.querySelector('#verbs');
   if (scrolled>=limit1) {
-    verbs.style.transform = 'translate3d(0px, -'+limit1*0.3+'px, 0px)';
+    verbs.style.transform = 'translate3d(0px, -'+limit1*0.35+'px, 0px)';
     $("#verbs").css("color","black");
     $("#game-chang").css("color","#4fffd9");
     $("#er").css("color","#4fffd9");

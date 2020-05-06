@@ -54,39 +54,51 @@
             <img src = "images/home/ny-state-of-mind.jpg" class = "thumbnail" id = "img-ny-state-of-mind"></img>
           </div>
           <div class = "parallax1" id = "wrapper-three">
-            <h2 id = "project-header">SELECTED PROJECTS</h2>
-            <h2 id = "projects">
-              <a href = "http://google.com" id = "metro-archive" onmouseover="displayImage(1)" onmouseout="hideImage(1)">METRO ARCHIVE<span class = "client"> - the new york times</span></a><br>
-              <a href = "http://google.com" id = "gait-mocap" onmouseover="displayImage(2)" onmouseout="hideImage(2)">GAIT MOCAP<span class = "client"> - mickey's movement</span></a><br>
-              <a href = "http://google.com" id = "design-shanghai" onmouseover="displayImage(3)" onmouseout="hideImage(3)">DESIGN SHANGHAI<span class = "client"> - imondi flooring</span></a><br>
-              <a href = "http://google.com" id = "cyberbird" onmouseover="displayImage(4)" onmouseout="hideImage(4)">CYBERBIRD<span class = "client"> - nyu makerspace</span></a><br>
-              <a href = "http://google.com" id = "ny-state-of-mind" onmouseover="displayImage(5)" onmouseout="hideImage(5)">NY STATE OF MIND<span class = "client"> - nyu idm</span></a><br>
-            </h2>
+            <div id = "wrapper-three-flex">
+              <h2 id = "project-header">SELECTED PROJECTS</h2>
+              <h3 id = "projects">
+                <a href = "http://google.com" id = "metro-archive" onmouseover="displayImage(1)" onmouseout="hideImage(1)">METRO ARCHIVE<span class = "client"> - the new york times</span></a><br>
+                <a href = "http://google.com" id = "gait-mocap" onmouseover="displayImage(2)" onmouseout="hideImage(2)">GAIT MOCAP<span class = "client"> - mickey's movement</span></a><br>
+                <a href = "http://google.com" id = "design-shanghai" onmouseover="displayImage(3)" onmouseout="hideImage(3)">DESIGN SHANGHAI<span class = "client"> - imondi flooring</span></a><br>
+                <a href = "http://google.com" id = "cyberbird" onmouseover="displayImage(4)" onmouseout="hideImage(4)">CYBERBIRD<span class = "client"> - nyu makerspace</span></a><br>
+                <a href = "http://google.com" id = "ny-state-of-mind" onmouseover="displayImage(5)" onmouseout="hideImage(5)">NY STATE OF MIND<span class = "client"> - nyu idm</span></a><br>
+              </h3>
+            </div>
           </div>
         </div>
         <div class="slide two">
           <div id = "section-about"></div>
-          <img class = "parallax2" id = "self-portrait" src="images/home/self-portrait-crop.jpg"></img>
+          <div class = "parallax2" id = "portrait-wrapper">
+            <img id = "self-portrait" src="images/home/self-portrait-crop.jpg"></img>
+          </div>
           <div class = "parallax1" id = "wrapper-two">
-            <h3 id = "headline">IF IT INVOLVES COMPUTERS AND CREATIVITY, CHANCES ARE I'M INTERESTED.</h3>
-            <p id = "introduction">I'm <span class = "highlight">Samuel (Sammy) Levin</span>, a Brooklyn-based media/product designer and undergraduate student in New York University's program for Integrated Digital Media. From filmmaking, to 3D modeling, to media technology, I’ll get my hands on just about anything that integrates technology and design. Above all, I’m a passionate innovator, strong collaborator, and attentive learner.</p>
+            <div id = "wrapper-two-flex">
+              <h3 id = "headline">IF IT INVOLVES COMPUTERS AND CREATIVITY, CHANCES ARE I'M INTERESTED.</h3>
+              <p id = "introduction">I'm <span class = "highlight">Samuel (Sammy) Levin</span>, a Brooklyn-based media/product designer and undergraduate student in New York University's program for Integrated Digital Media. From filmmaking, to 3D modeling, to media technology, I’ll get my hands on just about anything that integrates technology and design. Above all, I’m a passionate innovator, strong collaborator, and attentive learner.</p>
+            </div>
           </div>
         </div>
         <div class="slide one" id="section-intro">
-          <div id = "verbs-er">
-            <h1 class = "down1" id="verbs">TINKER<br>FILMMAK<br>PROGRAMM<br>3D DESIGN<br>PHOTOGRAPH<br><span id = "game-chang">GAME-CHANG</span></h1>
-            <h1 class = "right1" id="er">ER</h1>
+          <div id = "verbs-er-wrapper">
+            <div id = "verbs-er">
+              <div id = "verbs-wrapper">
+                <h1 class = "down1" id="verbs">TINKER<br>FILMMAK<br>PROGRAMM<br>3D DESIGN<br>PHOTOGRAPH<br><span id = "game-chang">GAME-CHANG</span></h1>
+              </div>
+              <h1 class = "right1" id="er">ER</h1>
+            </div>
           </div>
           <img id = "gradient" src="images/home/gradient-overlay.png"></img>
         </div>
         <div class="menu-wrapper">
           <div class="menu">
-            <a class="menu-item" onclick='scrollToSection("contact")'>Contact</a>
-            <a class="menu-item" onclick='scrollToSection("portfolio")'>Portfolio</a>
-            <!-- <a class="menu-item">Featured</a> -->
-            <a class="menu-item" onclick='scrollToSection("about")'>About</a>
-            <!-- <div width=90px></div> -->
-            <a id="title-link"><img id = "title-image" src="graphics/logo.png" onclick='scrollToSection("intro")'></img></a>
+            <div id = "menu-items">
+              <a class="menu-item" onclick='scrollToSection("contact")'>Contact</a>
+              <a class="menu-item" onclick='scrollToSection("portfolio")'>Portfolio</a>
+              <a class="menu-item" onclick='scrollToSection("about")'>About</a>
+            </div>
+            <div id = "menu-title">
+              <a id="title-link"><img id = "title-image" src="graphics/logo.png" onclick='scrollToSection("intro")'></img></a>
+            </div>
           </div>
         </div>
       </div>
