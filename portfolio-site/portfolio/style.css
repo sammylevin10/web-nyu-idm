@@ -1,8 +1,12 @@
+:root {
+  --highlight: #4fffd9;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Space Mono', sans-serif;
-  color: white;
+  color: black;
   background-color: black;
 }
 
@@ -11,4 +15,107 @@ img {
 }
 p {
   font-family: 'Heebo', sans-serif;
+  color: #666666;
+}
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
+  color: #444444;
+}
+h4 {
+  font-family: "Heebo", sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+  color: #444444;
+}
+a {
+  text-decoration: none;
+  background-color: #444444;
+  color:"white";
+  padding: 5px;
+  border-radius: 5px;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+a:visited {
+  color:white;
+}
+a:hover {
+  text-decoration: none;
+  background-color: var(--highlight);
+  color:#444444;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.main-content {
+  scroll-snap-type: y mandatory;
+}
+.title-bar {
+  width:100vw;
+  height:200px;
+  background-color: #444444;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-wrapper {
+  scroll-snap-align: start;
+  overflow-y: scroll;
+  width:100vw;
+  height:50vh;
+  background-color: white;
+  background-image: url('../graphics/grid.png');
+  background-size: 500px 250px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow:hidden
+}
+.project-wrapper:nth-child(odd) {
+  width:100vw;
+  height:50vh;
+  background-color: #EEEEEE;
+  background-image: none;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.column-image {
+  width:40vw;
+  height:50vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column-image>img {
+  object-fit: cover;
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+.column-text {
+  width:60vw;
+  height:50vh;
+  /* border-style: solid; */
+}
+.column-text>* {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.link-bar {
+  width:100%;
 }

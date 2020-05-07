@@ -8,7 +8,7 @@ $(document).ready(function() {
         this.scrollLeft -= (delta * 0.8);
         e.preventDefault();
     });
-  //Listen to scroll and affect DOM elements accordingly 
+  //Listen to scroll and affect DOM elements accordingly
   window.addEventListener('scroll', function(e) {
     var scrolled = window.pageXOffset;
     assignParallax(scrolled);
