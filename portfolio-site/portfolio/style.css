@@ -72,19 +72,20 @@ a:hover {
   scroll-snap-align: start;
   overflow-y: scroll;
   width:100vw;
-  height:50vh;
+  height:70vh;
   background-color: white;
   background-image: url('../graphics/grid.png');
   background-size: 500px 250px;
   background-color: white;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  overflow:hidden
+  justify-content: space-around;
+  align-items: center;
+  overflow:hidden;
 }
 .project-wrapper:nth-child(odd) {
   width:100vw;
-  height:50vh;
+  height:70vh;
   background-color: #EEEEEE;
   background-image: none;
   display: flex;
@@ -92,6 +93,7 @@ a:hover {
   justify-content: space-between;
 }
 .column-image {
+  border-radius: 10px;
   width:40vw;
   height:50vh;
   overflow: hidden;
