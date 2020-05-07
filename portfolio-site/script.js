@@ -3,6 +3,7 @@ console.log("Script is here");
 $(document).ready(function() {
   $(".menu").hide();
   $(".thumbnail").hide();
+  $("#cover").fadeOut(1000);
   console.log("hello");
     $('html, body, *').mousewheel(function(e, delta) {
         this.scrollLeft -= (delta * 0.8);
