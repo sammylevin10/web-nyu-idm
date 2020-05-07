@@ -1,14 +1,14 @@
-console.log("Script is here");
+console.log("Script running");
 
 $(document).ready(function() {
   $(".menu").hide();
   $(".thumbnail").hide();
   $("#cover").fadeOut(1000);
-  console.log("hello");
     $('html, body, *').mousewheel(function(e, delta) {
         this.scrollLeft -= (delta * 0.8);
         e.preventDefault();
     });
+  //Listen to scroll and affect DOM elements accordingly 
   window.addEventListener('scroll', function(e) {
     var scrolled = window.pageXOffset;
     assignParallax(scrolled);
@@ -17,6 +17,7 @@ $(document).ready(function() {
   });
 });
 
+// Assign scroll-based transformation to three degrees of parallax objects where 1 is foreground and 3 is background
 function assignParallax(scrolled) {
   const target1 = document.querySelectorAll('.parallax1');
   const target2 = document.querySelectorAll('.parallax2');
@@ -35,6 +36,7 @@ function assignParallax(scrolled) {
   }
 }
 
+// Assign specific motion to scroll-dependent objects like the verbs
 function assignMotion(scrolled) {
   const target1 = document.querySelectorAll('.down1');
   var down1 = scrolled*0.35;
@@ -43,6 +45,7 @@ function assignMotion(scrolled) {
   }
 }
 
+// Assign limits for content to fade in and out
 function assignLimits(scrolled) {
   //Verbs, -Er
   let limit1 = 1285;
@@ -85,6 +88,7 @@ function assignLimits(scrolled) {
   }
 }
 
+// Pseudo anchor menu system with JQuery scrolling animations
 function scrollToSection(destination) {
   if (destination=="intro") {
     window.scrollTo({
@@ -116,6 +120,7 @@ function scrollToSection(destination) {
   }
 }
 
+// Display portfolio image on mouseover
 function displayImage(num) {
   if (num==1) $("#img-metro-archive").fadeIn(300);
   else if (num==2) $("#img-gait-mocap").fadeIn(300);
@@ -124,6 +129,7 @@ function displayImage(num) {
   else if (num==5) $("#img-ny-state-of-mind").fadeIn(300);
 }
 
+// Hide portfolio image on mouseout
 function hideImage(num) {
   if (num==1) $("#img-metro-archive").fadeOut(300);
   else if (num==2) $("#img-gait-mocap").fadeOut(300);

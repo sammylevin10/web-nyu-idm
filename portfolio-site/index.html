@@ -1,123 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="jquery-3.5.0.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <script src="jquery.mousewheel.min.js"></script>
-    <script src="script.js"></script>
-    <title>Sammy Levin</title>
-  </head>
-  <body>
-    <!-- <div id="header">
-      <div class="child" id="left">
-        <div>
-          <h1>sammy levin</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="jquery-3.5.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="jquery.mousewheel.min.js"></script>
+  <script src="script.js"></script>
+  <title>Sammy Levin</title>
+</head>
+
+<body>
+  <div id="cover"></div>
+  <div class="outer-wrapper" id="start">
+    <div class="wrapper">
+      <div class="slide four"></div>
+      <div class="parallax2" id="phone-wrapper">
+        <img src="graphics/phone.png" id="phone"></img>
+      </div>
+      <div class="parallax1" id="wrapper-four">
+        <div id="wrapper-four-flex">
+          <h2 id="contact-header">LET'S GET IN TOUCH</h2>
+          <div id="social-bar">
+            <a href="mailto:samuel.levin@nyu.edu" target="_blank" class="fa fa-envelope"></a>
+            <a href="https://www.linkedin.com/in/s-levin/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.instagram.com/sammy.levin/?hl=en" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://www.youtube.com/channel/UC82Q4Snt4oEkAkf3KUx7voQ?view_as=subscriber" target="_blank" class="fa fa-youtube"></a>
+          </div>
+          <p id="contact-description">I'm on the lookout for internships, programs, or any opportunities where I can get involved with digital media. Feel free to contact me using the provided links.</p>
         </div>
       </div>
-      <div class="child" id="right">
-        <div class="scroll">
-          <h1>who?</h1>
+      <div class="slide three">
+        <div class="parallax2" id="thumbnails">
+          <img src="images/home/metro-archive.png" class="thumbnail" id="img-metro-archive"></img>
+          <img src="images/home/gait-mocap.png" class="thumbnail" id="img-gait-mocap"></img>
+          <img src="images/home/design-shanghai.jpg" class="thumbnail" id="img-design-shanghai"></img>
+          <img src="images/home/cyberbird.png" class="thumbnail" id="img-cyberbird"></img>
+          <img src="images/home/ny-state-of-mind.jpg" class="thumbnail" id="img-ny-state-of-mind"></img>
+        </div>
+        <div class="parallax1" id="wrapper-three">
+          <div id="wrapper-three-flex">
+            <h2 id="project-header">SELECTED PROJECTS</h2>
+            <h3 id="projects">
+              <a href="portfolio/index.html" id="metro-archive" onmouseover="displayImage(1)" onmouseout="hideImage(1)">METRO ARCHIVE<span class="client"> - the new york times</span></a><br>
+              <a href="portfolio/index.html" id="gait-mocap" onmouseover="displayImage(2)" onmouseout="hideImage(2)">GAIT MOCAP<span class="client"> - mickey's movement</span></a><br>
+              <a href="portfolio/index.html" id="design-shanghai" onmouseover="displayImage(3)" onmouseout="hideImage(3)">DESIGN SHANGHAI<span class="client"> - imondi flooring</span></a><br>
+              <a href="portfolio/index.html" id="cyberbird" onmouseover="displayImage(4)" onmouseout="hideImage(4)">CYBERBIRD<span class="client"> - nyu makerspace</span></a><br>
+              <a href="portfolio/index.html" id="ny-state-of-mind" onmouseover="displayImage(5)" onmouseout="hideImage(5)">NY STATE OF MIND<span class="client"> - nyu idm</span></a><br>
+            </h3>
+          </div>
         </div>
       </div>
-    </div> -->
-    <!-- <div class = "anchors">
-      <div id = "section-about"></div>
-      <div id = "section-featured"></div>
-      <div id = "section-portfolio"></div>
-      <div id = "section-contact"></div>
-    </div> -->
-    <div id = "cover"></div>
-    <div class="outer-wrapper" id = "start">
-      <div class="wrapper">
-
-        <!-- <div class="slide zero" id="spacer"></div> -->
-        <!-- <div class="slide one" id="section-intro">
-          <h1 class = "parallax1" id="sammy">SAMMY</h1>
-          <h1 class="parallax1" id="levin">LEVIN</h1>
-          <div class = "parallax3">
-            <img class = "image-large" id="home-image" src="images/home/home-image.jpg"></img>
-          </div>
-        </div> -->
-
-
-        <div class="slide four"></div>
-          <div class = "parallax2" id = "phone-wrapper">
-            <img src = "graphics/phone.png" id = "phone"></img>
-          </div>
-          <div class = "parallax1" id = "wrapper-four">
-            <div id = "wrapper-four-flex">
-              <h2 id = "contact-header">LET'S GET IN TOUCH</h2>
-              <div id = "social-bar">
-                <a href="mailto:samuel.levin@nyu.edu" target="_blank" class="fa fa-envelope"></a>
-                <a href="https://www.linkedin.com/in/s-levin/" target="_blank" class="fa fa-linkedin"></a>
-                <a href="https://www.instagram.com/sammy.levin/?hl=en"  target="_blank"class="fa fa-instagram"></a>
-                <a href="https://www.youtube.com/channel/UC82Q4Snt4oEkAkf3KUx7voQ?view_as=subscriber"  target="_blank"class="fa fa-youtube"></a>
-              </div>
-              <p id = "contact-description">I'm on the lookout for internships, programs, or any opportunities where I can get involved with digital media. Feel free to contact me using the provided links.</p>
-            </div>
-          </div>
-        <div class="slide three">
-          <div class = "parallax2" id = "thumbnails">
-            <img src = "images/home/metro-archive.png" class = "thumbnail" id = "img-metro-archive"></img>
-            <img src = "images/home/gait-mocap.png" class = "thumbnail" id = "img-gait-mocap"></img>
-            <img src = "images/home/design-shanghai.jpg" class = "thumbnail" id = "img-design-shanghai"></img>
-            <img src = "images/home/cyberbird.png" class = "thumbnail" id = "img-cyberbird"></img>
-            <img src = "images/home/ny-state-of-mind.jpg" class = "thumbnail" id = "img-ny-state-of-mind"></img>
-          </div>
-          <div class = "parallax1" id = "wrapper-three">
-            <div id = "wrapper-three-flex">
-              <h2 id = "project-header">SELECTED PROJECTS</h2>
-              <h3 id = "projects">
-                <a href = "http://google.com" id = "metro-archive" onmouseover="displayImage(1)" onmouseout="hideImage(1)">METRO ARCHIVE<span class = "client"> - the new york times</span></a><br>
-                <a href = "http://google.com" id = "gait-mocap" onmouseover="displayImage(2)" onmouseout="hideImage(2)">GAIT MOCAP<span class = "client"> - mickey's movement</span></a><br>
-                <a href = "http://google.com" id = "design-shanghai" onmouseover="displayImage(3)" onmouseout="hideImage(3)">DESIGN SHANGHAI<span class = "client"> - imondi flooring</span></a><br>
-                <a href = "http://google.com" id = "cyberbird" onmouseover="displayImage(4)" onmouseout="hideImage(4)">CYBERBIRD<span class = "client"> - nyu makerspace</span></a><br>
-                <a href = "http://google.com" id = "ny-state-of-mind" onmouseover="displayImage(5)" onmouseout="hideImage(5)">NY STATE OF MIND<span class = "client"> - nyu idm</span></a><br>
-              </h3>
-            </div>
+      <div class="slide two">
+        <div id="section-about"></div>
+        <div class="parallax2" id="portrait-wrapper">
+          <img id="self-portrait" src="images/home/self-portrait-crop.jpg"></img>
+        </div>
+        <div class="parallax1" id="wrapper-two">
+          <div id="wrapper-two-flex">
+            <h3 id="headline">IF IT INVOLVES COMPUTERS AND CREATIVITY, CHANCES ARE I'M INTERESTED.</h3>
+            <p id="introduction">I'm <span class="highlight">Samuel (Sammy) Levin</span>, a Brooklyn-based media/product designer and undergraduate student in New York University's program for Integrated Digital Media. From filmmaking, to 3D
+              modeling, to emerging media, I’ll get my hands on just about anything that integrates technology and design.</p>
           </div>
         </div>
-        <div class="slide two">
-          <div id = "section-about"></div>
-          <div class = "parallax2" id = "portrait-wrapper">
-            <img id = "self-portrait" src="images/home/self-portrait-crop.jpg"></img>
-          </div>
-          <div class = "parallax1" id = "wrapper-two">
-            <div id = "wrapper-two-flex">
-              <h3 id = "headline">IF IT INVOLVES COMPUTERS AND CREATIVITY, CHANCES ARE I'M INTERESTED.</h3>
-              <p id = "introduction">I'm <span class = "highlight">Samuel (Sammy) Levin</span>, a Brooklyn-based media/product designer and undergraduate student in New York University's program for Integrated Digital Media. From filmmaking, to 3D modeling, to media technology, I’ll get my hands on just about anything that integrates technology and design. Above all, I’m a passionate innovator, strong collaborator, and attentive learner.</p>
+      </div>
+      <div class="slide one" id="section-intro">
+        <div id="verbs-er-wrapper">
+          <div id="verbs-er">
+            <div id="verbs-wrapper">
+              <h1 class="down1" id="verbs">TINKER<br>FILMMAK<br>PROGRAMM<br>3D DESIGN<br>PHOTOGRAPH<br><span id="game-chang">GAME-CHANG</span></h1>
             </div>
+            <h1 class="right1" id="er">ER</h1>
           </div>
         </div>
-        <div class="slide one" id="section-intro">
-          <div id = "verbs-er-wrapper">
-            <div id = "verbs-er">
-              <div id = "verbs-wrapper">
-                <h1 class = "down1" id="verbs">TINKER<br>FILMMAK<br>PROGRAMM<br>3D DESIGN<br>PHOTOGRAPH<br><span id = "game-chang">GAME-CHANG</span></h1>
-              </div>
-              <h1 class = "right1" id="er">ER</h1>
-            </div>
+        <img id="gradient" src="images/home/gradient-overlay.png"></img>
+      </div>
+      <div class="menu-wrapper">
+        <div class="menu">
+          <div id="menu-items">
+            <a class="menu-item" onclick='scrollToSection("contact")'>Contact</a>
+            <a class="menu-item" onclick='scrollToSection("portfolio")'>Portfolio</a>
+            <a class="menu-item" onclick='scrollToSection("about")'>About</a>
           </div>
-          <img id = "gradient" src="images/home/gradient-overlay.png"></img>
-        </div>
-        <div class="menu-wrapper">
-          <div class="menu">
-            <div id = "menu-items">
-              <a class="menu-item" onclick='scrollToSection("contact")'>Contact</a>
-              <a class="menu-item" onclick='scrollToSection("portfolio")'>Portfolio</a>
-              <a class="menu-item" onclick='scrollToSection("about")'>About</a>
-            </div>
-            <div id = "menu-title">
-              <a id="title-link"><img id = "title-image" src="graphics/logo.png" onclick='scrollToSection("intro")'></img></a>
-            </div>
+          <div id="menu-title">
+            <a id="title-link"><img id="title-image" src="graphics/logo.png" onclick='scrollToSection("intro")'></img></a>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

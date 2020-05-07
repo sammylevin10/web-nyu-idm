@@ -20,13 +20,13 @@ $(document).ready(function() {
       }).append(
         $('<div>', {
           class: 'image',
-          html: '<img class="smallImage" src=assets/' + arrWorks[i].id + '.png>'
+          html: '<img class="smallImage" src=../images/home/' + arrWorks[i].id + '.png>'
         }),
-        $('<div>', {
+        $('<h1>', {
           class: 'title',
           text: arrWorks[i].title
         }),
-        $('<div>', {
+        $('<p>', {
           class: 'description',
           html: arrWorks[i].description
         }),
