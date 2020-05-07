@@ -102,31 +102,31 @@ function scrollToSection(destination) {
   if (destination=="portfolio") {
     window.scrollTo({
       top: 0,
-      left: 5100,
+      left: 5050,
       behavior: 'smooth'
     });
   }
   if (destination=="contact") {
     window.scrollTo({
       top: 0,
-      left: 7000,
+      left: 7200,
       behavior: 'smooth'
     });
   }
 }
 
 function displayImage(num) {
-  if (num==1) $("#img-metro-archive").fadeIn(500);
-  else if (num==2) $("#img-gait-mocap").fadeIn(500);
-  else if (num==3) $("#img-design-shanghai").fadeIn(500);
-  else if (num==4) $("#img-cyberbird").fadeIn(500);
-  else if (num==5) $("#img-ny-state-of-mind").fadeIn(500);
+  if (num==1) $("#img-metro-archive").fadeIn(300);
+  else if (num==2) $("#img-gait-mocap").fadeIn(300);
+  else if (num==3) $("#img-design-shanghai").fadeIn(300);
+  else if (num==4) $("#img-cyberbird").fadeIn(300);
+  else if (num==5) $("#img-ny-state-of-mind").fadeIn(300);
 }
 
 function hideImage(num) {
-  if (num==1) $("#img-metro-archive").fadeOut(500);
-  else if (num==2) $("#img-gait-mocap").fadeOut(500);
-  else if (num==3) $("#img-design-shanghai").fadeOut(500);
-  else if (num==4) $("#img-cyberbird").fadeOut(500);
-  else if (num==5) $("#img-ny-state-of-mind").fadeOut(500);
+  if (num==1) $("#img-metro-archive").fadeOut(300);
+  else if (num==2) $("#img-gait-mocap").fadeOut(300);
+  else if (num==3) $("#img-design-shanghai").fadeOut(300);
+  else if (num==4) $("#img-cyberbird").fadeOut(300);
+  else if (num==5) $("#img-ny-state-of-mind").fadeOut(300);
 }

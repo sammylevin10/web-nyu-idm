@@ -68,13 +68,17 @@ body {
 }
 .four {
   position: absolute;
-  clip: rect(0px,9000px,100vh,0px);
+  clip: rect(0px,8500px,100vh,0px);
   background-image: url('graphics/grid-2.png');
   background-size: 500px 250px;
-  background-color: #888888;
-  width: 9000px;
+  background-color: #666666;
+  width: 8500px;
 }
-
+.five {
+  position: absolute;
+  background-color: #222222;
+  width: 8550px;
+}
 h1 {
   /* position: absolute; */
   font-family: 'Space Mono', monospace;
@@ -366,23 +370,26 @@ p {
 }
 #thumbnails {
   position: absolute;
+  /* background-color:blue; */
   height:70vh;
   width:400px;
-  background-color: #DDDDDD;
+  /* background-color: #DDDDDD; */
   top:15vh;
-  left:4450px;
+  left:4350px;
   display:flex;
   align-items: center;
   justify-content: center;
-  clip: rect(0px,400px,70vh,0px);
+  /* clip: rect(0px,400px,70vh,0px); */
 
 }
 #thumbnails>img {
   height:70vh;
   position: fixed;
-  opacity: 0.5;
-  /* filter: contrast(50%); */
-  /* filter: brightness(100%); */
+  /* opacity: 0.5; */
+  filter: grayscale(100%) contrast(50%) brightness(130%);
+}
+#img-ny-state-of-mind, #img-design-shanghai {
+  transform: rotateY(-15deg) rotateX(20deg) rotateZ(1deg);
 }
 .client {
   font-family: "Heebo";
@@ -393,7 +400,7 @@ p {
 /* CONTACT PAGE */
 #wrapper-four {
   position: absolute;
-  left:4000px;
+  left:3750px;
   width:1000px;
   height:100vh;
   /* background-color: red; */
@@ -412,14 +419,15 @@ p {
   justify-content: space-around;
 }
 #wrapper-four-flex>* {
-  color: black;
+  color: white;
   text-align: right;
   position: relative;
   padding:0;
   margin:0;
 }
 #contact-description {
-  width:500px;
+  width:510px;
+  color:#DDDDDD;
 }
 #social-bar {
   font-size: 30px;
@@ -432,7 +440,7 @@ p {
   border-radius: 10px;
   /* margin: 5px 2px; */
   background: white;
-  color: #888888;
+  color: #666666;
   font-size: 6em;
   -moz-transition: all 1s;
   -webkit-transition: all 1s;
@@ -448,7 +456,7 @@ p {
   width:500px;
   height:100vh;
   position: absolute;
-  left: 5500px;
+  left: 5200px;
   display: flex;
   align-items: center;
 
